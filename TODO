@@ -1,0 +1,19 @@
+C++ assign1 todo
+
+* Explain in comments why algo differs
+* Replace array with vector for edges
+* Check for mem leaks
+* Clean up code:
+	- Commenting
+	- intermediate variables
+	- 
+
+* Width height = pixels or cells??
+
+* list of edges - change contents to pointers insted of redundant ints
+	- modify older binary to svg code. 
+
+* SVG - rectangales ok?
+
+* Make sure you explain reasoning for arguments on readme
+
