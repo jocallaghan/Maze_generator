@@ -1,0 +1,808 @@
+Generating maze.
+Height: 90. 
+Width: 90. 
+2546248239 2357136044 2
+2588848963 3626093760 2
+3638918503 2340255427 2
+2774094101 2678185683 2
+1277901399 1879422756 3
+4138900056 243580376 2
+2051556033 1646868794 3
+2271586391 3488238119 2
+1686997841 2439732824 3
+305097549 3590930969 2
+2783877012 374217481 3
+3576074995 1581585360 2
+602801999 3342157822 3
+4203133778 3736996288 3
+3439885489 3432359896 3
+3352347283 2235433757 1
+3095093671 507984782 2
+615697673 2499755969 2
+3258229280 4057322111 3
+1780959476 454869706 3
+800291326 1136257699 3
+1959150775 3165039474 2
+580757632 2441405218 1
+2652724277 1392175012 1
+Saving maze to SVG: lol.sg. 
+1==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402FA4: maze::Cell::get_y_pos() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406A34: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d838 is 8 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402FB6: maze::Cell::get_x_pos() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406A4A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d840 is 16 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40230C: maze::Maze::get_cell(unsigned long, unsigned long) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406AEA: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d528 is 8 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403C7E: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::end() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4035DF: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::empty() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40300B: maze::Cell::cell_visited() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406B0C: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1e6b0 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403CB0: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::begin() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4035EF: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::empty() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40300B: maze::Cell::cell_visited() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406B0C: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1e6a8 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40230C: maze::Maze::get_cell(unsigned long, unsigned long) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406BB6: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403C7E: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::end() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4035DF: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::empty() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40300B: maze::Cell::cell_visited() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406BD8: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d878 is 72 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403CB0: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::begin() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4035EF: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::empty() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40300B: maze::Cell::cell_visited() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406BD8: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d870 is 64 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403792: __gnu_cxx::__normal_iterator<maze::Cell**, std::vector<maze::Cell*, std::allocator<maze::Cell*> > >::__normal_iterator(maze::Cell** const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4033A6: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::end() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40236A: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403792: __gnu_cxx::__normal_iterator<maze::Cell**, std::vector<maze::Cell*, std::allocator<maze::Cell*> > >::__normal_iterator(maze::Cell** const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4033A6: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::end() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402386: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403792: __gnu_cxx::__normal_iterator<maze::Cell**, std::vector<maze::Cell*, std::allocator<maze::Cell*> > >::__normal_iterator(maze::Cell** const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40337C: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::begin() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402399: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4039B6: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4039BE: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d858 is 40 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044CC: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4043ED: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_check_len(unsigned long, char const*) const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F42: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044D7: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4043ED: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_check_len(unsigned long, char const*) const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F42: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044CC: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x404419: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_check_len(unsigned long, char const*) const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F42: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044D7: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x404419: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_check_len(unsigned long, char const*) const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F42: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044CC: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x404428: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_check_len(unsigned long, char const*) const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F42: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044D7: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x404428: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_check_len(unsigned long, char const*) const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F42: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044CC: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x404455: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_check_len(unsigned long, char const*) const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F42: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044D7: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x404455: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_check_len(unsigned long, char const*) const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F42: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044CC: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F80: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4044D7: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::size() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403F80: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403FBE: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403FC6: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403FF1: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403FF9: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40400B: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d858 is 40 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x404016: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40402A: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid write of size 8
+==6641==    at 0x404044: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid write of size 8
+==6641==    at 0x40404F: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid write of size 8
+==6641==    at 0x40406A: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402409: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d858 is 40 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4039B6: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d878 is 72 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4039BE: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d880 is 80 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403FBE: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d878 is 72 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403FC6: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d870 is 64 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403FF1: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d878 is 72 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403FF9: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d870 is 64 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40400B: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d880 is 80 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x404016: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d870 is 64 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40402A: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d870 is 64 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid write of size 8
+==6641==    at 0x404044: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d870 is 64 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid write of size 8
+==6641==    at 0x40404F: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d878 is 72 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid write of size 8
+==6641==    at 0x40406A: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::_M_emplace_back_aux<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403A20: void std::vector<maze::Cell*, std::allocator<maze::Cell*> >::emplace_back<maze::Cell*>(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x403467: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::push_back(maze::Cell*&&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402428: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d880 is 80 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402FB6: maze::Cell::get_x_pos() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402434: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d840 is 16 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402FA4: maze::Cell::get_y_pos() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402444: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d838 is 8 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402FB6: maze::Cell::get_x_pos() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402454: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d868 is 56 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402FA4: maze::Cell::get_y_pos() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402464: maze::Maze::add_edge(maze::Cell&, maze::Cell&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406D3A: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d860 is 48 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40230C: maze::Maze::get_cell(unsigned long, unsigned long) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406B50: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403C7E: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::end() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4035DF: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::empty() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40300B: maze::Cell::cell_visited() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406B72: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d850 is 32 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403CB0: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::begin() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4035EF: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::empty() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40300B: maze::Cell::cell_visited() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406B72: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d848 is 24 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40230C: maze::Maze::get_cell(unsigned long, unsigned long) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406A84: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403C7E: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::end() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4035DF: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::empty() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40300B: maze::Cell::cell_visited() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406AA6: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d8c8 is 152 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403CB0: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::begin() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4035EF: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::empty() const (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40300B: maze::Cell::cell_visited() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x406AA6: maze::build(maze::Maze&, unsigned long const&, unsigned long const&, std::string const&) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4055D5: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d8c0 is 144 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4024CB: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x4024EA: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402500: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402507: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d830 is 0 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40252F: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403339: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::~vector() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4031FB: maze::Cell::~Cell() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402542: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1e638 is 3,592 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403341: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::~vector() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4031FB: maze::Cell::~Cell() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402542: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1e630 is 3,584 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x40370A: std::_Vector_base<maze::Cell*, std::allocator<maze::Cell*> >::~_Vector_base() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40335A: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::~vector() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4031FB: maze::Cell::~Cell() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402542: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1e640 is 3,600 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403715: std::_Vector_base<maze::Cell*, std::allocator<maze::Cell*> >::~_Vector_base() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40335A: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::~vector() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4031FB: maze::Cell::~Cell() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402542: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1e630 is 3,584 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x403729: std::_Vector_base<maze::Cell*, std::allocator<maze::Cell*> >::~_Vector_base() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40335A: std::vector<maze::Cell*, std::allocator<maze::Cell*> >::~vector() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x4031FB: maze::Cell::~Cell() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x402542: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1e630 is 3,584 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid read of size 8
+==6641==    at 0x402558: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid free() / delete / delete[] / realloc()
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d830 is 0 bytes inside a block of size 3,608 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x402566: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== Invalid free() / delete / delete[] / realloc()
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x40570F: main (in /home/josh/Documents/c++/lab04/maze)
+==6641==  Address 0x5a1d520 is 0 bytes inside a block of size 720 free'd
+==6641==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x40259A: maze::Maze::~Maze() (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x405579: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== 
+==6641== HEAP SUMMARY:
+==6641==     in use at exit: 56 bytes in 2 blocks
+==6641==   total heap usage: 220 allocs, 309 frees, 339,186 bytes allocated
+==6641== 
+==6641== 56 (8 direct, 48 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
+==6641==    at 0x4C2B800: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6641==    by 0x401E4D: maze::Maze::Maze(unsigned long, unsigned long) (in /home/josh/Documents/c++/lab04/maze)
+==6641==    by 0x404E28: main (in /home/josh/Documents/c++/lab04/maze)
+==6641== 
+==6641== LEAK SUMMARY:
+==6641==    definitely lost: 8 bytes in 1 blocks
+==6641==    indirectly lost: 48 bytes in 1 blocks
+==6641==      possibly lost: 0 bytes in 0 blocks
+==6641==    still reachable: 0 bytes in 0 blocks
+==6641==         suppressed: 0 bytes in 0 blocks
+==6641== 
+==6641== For counts of detected and suppressed errors, rerun with: -v
+==6641== ERROR SUMMARY: 50780 errors from 70 contexts (suppressed: 0 from 0)

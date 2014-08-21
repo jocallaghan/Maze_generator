@@ -27,3 +27,6 @@
 
 # Maze images
 *.svg
+
+# Maze program
+maze
