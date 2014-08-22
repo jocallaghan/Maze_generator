@@ -43,8 +43,11 @@
  		{
  			this->cells[y_count][x_count].set_y_pos(y_count);
  			this->cells[y_count][x_count].set_x_pos(x_count);
- 			/*std::cerr << "Assigning x: " << x_count << ", y: " << y_count << "\n";
- 			std::cerr << "Found x: " << this->cells[y_count][x_count].get_x_pos() << ", y: " << this->cells[y_count][x_count].get_y_pos() << "\n";*/
+ 			/*std::cerr << "Assigning x: " << x_count << ", y: " << y_count;
+ 			std::cerr << "\n";
+ 			std::cerr << "Found x: ";
+ 			std::cerr << this->cells[y_count][x_count].get_x_pos()<< ", y: ";
+ 			std::cerr << this->cells[y_count][x_count].get_y_pos() << "\n";*/
  		}
  	}
 
@@ -80,10 +83,11 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  	else
  	{
 		/*std::cerr << "ask cell y: " << y_pos << ", x: " << x_pos << "\n";
-		std::cerr << "got cell y: " << cells[y_pos][x_pos].get_y_pos() << ", x: " << cells[y_pos][x_pos].get_x_pos() << "\n";*/
- 		return &this->cells[y_pos][x_pos];
- 	}
- }
+		std::cerr << "got cell y: " << cells[y_pos][x_pos].get_y_pos(); 
+		std::cerr << ", x: " << cells[y_pos][x_pos].get_x_pos() << "\n";*/
+		return &this->cells[y_pos][x_pos];
+	}
+}
 
 /******************************************************************************
  * cell_visited() - Check the the given cell has anything in its 
@@ -265,7 +269,8 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  		output << "xmlns='http://www.w3.org/2000/svg'>" << "\n";
 
  		/* box */
- 		output << "<rect width='" << box_width << "' height='" << box_height << "' style='fill: black' />" << "\n";
+ 		output << "<rect width='" << box_width << "' height='" << box_height;
+ 		output << "' style='fill: black' />" << "\n";
 
  		/* Edges */
  		for(auto & edge : edges)
@@ -275,28 +280,33 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  			unsigned long current_path_width;
  			unsigned long current_path_height;
 
- 			/* Dimentions depends on the edges - some are 
- 			   in reverse order (right to left etc) */
+ 			/* Dimentions depends on the edges - some in reverse order 
+ 			(right to left etc) so first we determine which cell is first,
+ 			then we can work out how to make the rectangle */
  			if(edge.x1 < edge.x2)
  			{
  				x = edge.x1 * CELL_SIZE_PIXELS + WALL_WIDTH;
- 				current_path_width = (edge.x2 - edge.x1 + 1) * CELL_SIZE_PIXELS - (2 * WALL_WIDTH);
+ 				current_path_width = (edge.x2 - edge.x1 + 1) * CELL_SIZE_PIXELS 
+ 				- (2 * WALL_WIDTH);
  			}
  			else
  			{
  				x = edge.x2 * CELL_SIZE_PIXELS + WALL_WIDTH;
- 				current_path_width = (edge.x1 - edge.x2 + 1) * CELL_SIZE_PIXELS - (2 * WALL_WIDTH);
+ 				current_path_width = (edge.x1 - edge.x2 + 1) * CELL_SIZE_PIXELS 
+ 				- (2 * WALL_WIDTH);
  			}
 
  			if(edge.y1 < edge.y2)
  			{
  				y = edge.y1 * CELL_SIZE_PIXELS + WALL_WIDTH;
- 				current_path_height = (edge.y2 - edge.y1 + 1) * CELL_SIZE_PIXELS - (2 * WALL_WIDTH);
+ 				current_path_height = (edge.y2 - edge.y1 + 1) * CELL_SIZE_PIXELS
+ 				- (2 * WALL_WIDTH);
  			}
  			else
  			{
  				y = edge.y2 * CELL_SIZE_PIXELS + WALL_WIDTH;
- 				current_path_height = (edge.y1 - edge.y2 + 1) * CELL_SIZE_PIXELS - (2 * WALL_WIDTH);
+ 				current_path_height = (edge.y1 - edge.y2 + 1) * CELL_SIZE_PIXELS
+ 				- (2 * WALL_WIDTH);
  			}
 
  			output << "<rect style='fill:rgb(255,255,255)' ";
@@ -307,13 +317,19 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  		}
 
  		/* Entry and exit paths */
- 		output << "<rect style='fill:rgb(255,255,255)' ";
- 		output << " x='0' y='" << WALL_WIDTH << "' width='" << PATH_WIDTH;
- 		output << "' height='" << PATH_WIDTH << "'/>" << "\n";
+ 		if(ENTRY_EXIT_PATHS == true)
+ 		{
+ 			output << "<rect style='fill:rgb(255,255,255)' ";
+ 			output << " x='0' y='" << WALL_WIDTH << "' width='" << PATH_WIDTH;
+ 			output << "' height='" << PATH_WIDTH << "'/>" << "\n";
 
- 		output << "<rect style='fill:rgb(255,255,255)' ";
- 		output << " x='" << (box_width - PATH_WIDTH)  << "' y='" << (box_height - PATH_WIDTH - WALL_WIDTH) << "' width='" << PATH_WIDTH;
- 		output << "' height='" << PATH_WIDTH << "'/>" << "\n";
+ 			output << "<rect style='fill:rgb(255,255,255)' ";
+ 			output << " x='" << (box_width - PATH_WIDTH)  << "' y='";
+ 			output << (box_height - PATH_WIDTH - WALL_WIDTH) << "' width='";
+ 			output << PATH_WIDTH;
+ 			output << "' height='" << PATH_WIDTH << "'/>" << "\n";
+ 		}
+ 		
 
  	}
  	else
@@ -373,14 +389,6 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  bool maze::Cell::cell_visited(void)
  {
  	return !this->adjacent_cells.empty();
- }
-
-/******************************************************************************
- * ~Cell() - Frees cell
- *****************************************************************************/
- maze::Cell::~Cell(void)
- {
-
  }
 
 

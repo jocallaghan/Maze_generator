@@ -34,20 +34,23 @@ int main(int argc, char * argv[])
 	std::string program_name = argv[0];
 	
 	
-	/* Your program should be able to run from the command line, with arguments to specify how the 
-	program should run, ie:
-	./exe --lb filename.maze --sv filename.svg # load binary file and save svg file
-	./exe -g seed --sb filename.maze # generate with seed value, save binary file
+	/* ###QUOTE ASSIGNMENT### our program should be able to run from the command 
+	line, with arguments to specify how the program should run, ie:
+	./exe --lb filename.maze --sv filename.svg # load binary file and save svg 
+	    file
+	./exe -g seed --sb filename.maze # generate with seed value, save binary 
+	    file
 	./exe -g seed --sv filename.svg # generate with seed value, save svg file
-	./exe -g seed --sb filename.maze --sv filename.svg # gen with seed, save binary, save svg
+	./exe -g seed --sb filename.maze --sv filename.svg # gen with seed, save 
+	    binary, save svg
 
-	You should also be able to specify the width/height of the maze when generating (but not when 
-	loading), ie:
+	You should also be able to specify the width/height of the maze when 
+	generating (but not when loading), ie:
 
 	./exe -g seed width height …
 
-	Note that command line args can be given in any order, and an appropriate error message 
-	should be given if inappropriate args are entered. */
+	Note that command line args can be given in any order, and an appropriate 
+	error message should be given if inappropriate args are entered. */
 	
 	/* Now go through the arguments */
 	for(int i = 1; i < argc; i++) /* Skip program name */
@@ -92,13 +95,15 @@ int main(int argc, char * argv[])
 						}
 						catch (const std::invalid_argument& e)
 						{
-							std::cerr << "Height and/or width have to be numbers.\n\n";
+							std::cerr << "Height and/or width have to be ";
+							std::cerr << "numbers.\n\n";
 							argument_error(program_name);
 							return 1;
 						}
 						catch (const std::out_of_range& e)
 						{
-							std::cerr << "Maximum height/width: " << ULONG_MAX << ".\n\n";
+							std::cerr << "Maximum height/width: " << ULONG_MAX;
+							std::cerr << ".\n\n";
 							argument_error(program_name);
 							return 1;
 						}
@@ -108,7 +113,8 @@ int main(int argc, char * argv[])
 					}
 					else
 					{
-						std::cerr << "Found generate flag without height and width.\n\n";
+						std::cerr << "Found generate flag without height and ";
+						std::cerr << "width.\n\n";
 						argument_error(program_name);
 						return 1;
 					}
@@ -168,7 +174,8 @@ int main(int argc, char * argv[])
 		else
 		{
 			/* Found extra info */
-			std::cerr << "Ignoring argument \"" << current_argument << "\".\n\n";
+			std::cerr << "Ignoring argument \"" << current_argument;
+			std::cerr << "\".\n\n";
 		}		
 		
 	}
@@ -222,6 +229,7 @@ int main(int argc, char * argv[])
 void argument_error(std::string program_name)
 {
 	std::cout << "Incorrect use of arguments. Please use:\n";
-	std::cout << program_name << " <[-g seed height width] OR [--lb filename.maze]> ";
+	std::cout << program_name << " <[-g seed height width] OR ";
+	std::cout << "[--lb filename.maze]> ";
 	std::cout << "<[--sb filename.maze] OR [--sv filename.svg]>\n";
 }

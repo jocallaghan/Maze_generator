@@ -9,21 +9,6 @@ void maze::build(maze::Maze * maze, const unsigned long &height,
                 const unsigned long &width, const std::string &seed)
 {
 
-
-    /*std::cerr << "Entering build\n";*/
-    /* We need to empty out the current maze in case it is
-       already populated */
-    /* TODO
-    try
-    {
-        maze.resize_clear_maze(height, width);
-    }
-    catch(maze::CannotGenerateMaze e)
-    {
-        return;
-    }
-    */
-
     /*  Algorithm: https://en.wikipedia.org/wiki/
         Maze_generation_algorithm#Recursive_backtracker 
 
@@ -31,14 +16,20 @@ void maze::build(maze::Maze * maze, const unsigned long &height,
         Since there is no possibility for the stack to
         be empty and have unvisited cells, I decided
         to remove the "pick random cell" segment.
-        */
+    */
 
 
-    /* Convert string to ints */
-    /*  Source: http://stackoverflow.com/a/1496541 */
-    std::stringstream stream(seed);
+    /* Convert string - sum ASCII values */
     unsigned long seed_long;
-    stream >> seed_long;
+
+    for(unsigned i = 0; i < seed.length(); i++)
+    {
+    	seed_long += static_cast<unsigned long>(seed[i]);
+    }
+
+    /*std::stringstream stream(seed);
+    
+    stream >> seed_long;*/
 
     std::mt19937 mt (seed_long);
 
@@ -68,14 +59,16 @@ void maze::build(maze::Maze * maze, const unsigned long &height,
         /* One above - check because unsigned cant be negative*/
         if(current_y_pos != 0)
         {
-            maze::Cell * cell_above = maze->get_cell(current_y_pos - 1, current_x_pos);
+            maze::Cell * cell_above = maze->get_cell(current_y_pos - 1, 
+            	current_x_pos);
             if(cell_above != NULL)
                 if(!cell_above->cell_visited())
                     unvisited_neighbours.push_back(cell_above);
         }
         
         /* One below */
-        maze::Cell * cell_below = maze->get_cell(current_y_pos + 1, current_x_pos);
+        maze::Cell * cell_below = maze->get_cell(current_y_pos + 1, 
+        	current_x_pos);
         if(cell_below != NULL)
             if(!cell_below->cell_visited())
                 unvisited_neighbours.push_back(cell_below);
@@ -83,14 +76,16 @@ void maze::build(maze::Maze * maze, const unsigned long &height,
         /* One left - check because unsigned cant be negative*/
         if(current_x_pos != 0)
         {
-            maze::Cell * cell_left = maze->get_cell(current_y_pos, current_x_pos - 1);
+            maze::Cell * cell_left = maze->get_cell(current_y_pos, 
+            	current_x_pos - 1);
             if(cell_left != NULL)
                 if(!cell_left->cell_visited())
                     unvisited_neighbours.push_back(cell_left);
         }
         
         /* One right */
-        maze::Cell * cell_right = maze->get_cell(current_y_pos, current_x_pos + 1);
+        maze::Cell * cell_right = maze->get_cell(current_y_pos, 
+        	current_x_pos + 1);
         if(cell_right != NULL)
             if(!cell_right->cell_visited())
                 unvisited_neighbours.push_back(cell_right);
@@ -104,8 +99,7 @@ void maze::build(maze::Maze * maze, const unsigned long &height,
         }
 
         /* Randomly select path */
-        /*
-        std::cout << mt() << " " << mt() << " " << unvisited_neighbours.size() << "\n";*/
+        
         unsigned random_index = mt() % unvisited_neighbours.size();
         /* Decide a path */
         next_cell = unvisited_neighbours[random_index];

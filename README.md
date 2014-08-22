@@ -18,6 +18,8 @@ possible loss of functionality for larger mazes.
 If you wish to use this method of producing SVGs however, you can change 
 ENHANCED_SVG in maze.h to false. This method also uses lines instead of
 rectangles.
+If you used the enhanced SVG, you will have two extra paths for the entry and
+exit - this can be disabled by making ENTRY_EXIT_PATHS in maze.h false.
 
 The generator is a depth-first search with backtracking. (see 
 https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker)
@@ -48,6 +50,14 @@ in the program using the last one.
 
 
 
+#### Other info
+For the maze edges, I used two different structures.
+When generating a maze, the most efficient way for me to traverse was to use
+a grid of cells, each with an adjacently list with pointers to cells it shares a
+path with. It also keeps another extra list of all edges 
+(this cell -> other cell).
+Although redundant, this extra list is helpful when creating an SVG since we
+don't need to keep track of duplicate edges.
 
-
-
+When loading a binary file, we only use the list of edges since we don't need 
+the grid for traversal.

@@ -21,6 +21,10 @@ namespace maze
 	   entry & exit points */
 	const bool ENHANCED_SVG = true;
 
+	/* Enabling this will add extra paths on an SVG so that the maze has
+	   an entry and exit - will only work for enhanced SVG*/
+	const bool ENTRY_EXIT_PATHS = true;
+
 	/* Don't change */
 	const double WALL_WIDTH = CELL_SIZE_PIXELS * WALL_SIZE_FACTOR;
 	const double PATH_WIDTH = CELL_SIZE_PIXELS - (2 * WALL_WIDTH);/* 2 sides */
@@ -62,8 +66,6 @@ namespace maze
 			void set_y_pos(unsigned long y_pos);
 			void set_x_pos(unsigned long x_pos);
 
-
-			~Cell(void);
 	};
 
 
@@ -79,14 +81,8 @@ namespace maze
 		/* Load pre-generated maze */
 		Maze(std::string & file_name);
 		
-
 		/* New, empty Maze */	
 		Maze(unsigned long height, unsigned long width);
-
-		
-
-		/* Resize (+ clear) maze */
-		/* void resize_clear_maze(unsigned long height, unsigned long width); */
 
 		unsigned long get_width() { return width; }
 		unsigned long get_height() { return height; }
@@ -95,7 +91,6 @@ namespace maze
 		bool cell_visited(maze::Cell &cell);
 		
 		void add_edge(maze::Cell &cell1, maze::Cell &cell2);
-
 
 
 		/* Saving maze */
