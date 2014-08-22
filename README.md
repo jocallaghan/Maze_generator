@@ -35,8 +35,11 @@ To remove the compiled files, simply call
 
 ### Usage
 ./maze -g seed height width --sb output.maze   (generate binary)
+
 ./maze -g seed height width --sv output.svg    (generate SVG)
+
 ./maze --lb binary_file.maze --sv output.svg   (binary to SVG)
+
 
 NOTE:
 You may use the argument flags in any order, but make sure you keep their args 
