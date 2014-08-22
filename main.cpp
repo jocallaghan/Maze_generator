@@ -49,15 +49,6 @@ int main(int argc, char * argv[])
 	Note that command line args can be given in any order, and an appropriate error message 
 	should be given if inappropriate args are entered. */
 	
-	/* First check number of arguments */
-	/* Minimum is 5 - maximum is 7 (including program name) */
-	if (argc < 5 || argc > 7)
-	{
-		std::cerr << "Missing/too many args.\n\n";
-		argument_error(program_name);
-		return 1;
-	}
-	
 	/* Now go through the arguments */
 	for(int i = 1; i < argc; i++) /* Skip program name */
 	{

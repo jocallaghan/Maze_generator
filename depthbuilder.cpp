@@ -24,8 +24,14 @@ void maze::build(maze::Maze * maze, const unsigned long &height,
     }
     */
 
-    /* Algorithm: https://en.wikipedia.org/wiki/
-        Maze_generation_algorithm#Recursive_backtracker */
+    /*  Algorithm: https://en.wikipedia.org/wiki/
+        Maze_generation_algorithm#Recursive_backtracker 
+
+        Changes:
+        Since there is no possibility for the stack to
+        be empty and have unvisited cells, I decided
+        to remove the "pick random cell" segment.
+        */
 
 
     /* Convert string to ints */

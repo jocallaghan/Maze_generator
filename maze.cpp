@@ -129,15 +129,15 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  *****************************************************************************/
  maze::Maze::~Maze(void)
  {
-
- 	for(unsigned long count = 0; count < height; count++)
+ 	if(cells != NULL)
  	{
-		/*std::cerr << "Deleting cells y: " << count << "\n";*/
- 		delete[] cells[count];
+ 		for(unsigned long count = 0; count < height; count++)
+ 		{
+			/*std::cerr << "Deleting cells y: " << count << "\n";*/
+ 			delete[] cells[count];
+ 		}
+ 		delete[] cells;
  	}
-
- 	delete[] cells;
-
  }
 
 
@@ -167,6 +167,9 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
 	/* Create Maze */
  	this->height = height;
  	this->width = width;
+
+ 	/* We are using the edge list only - cells are for generating */
+ 	cells = NULL;
 
  	unsigned long readEdges = 0;
 	/* edges */
