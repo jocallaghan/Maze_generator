@@ -1,0 +1,724 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pth",
+				"pathway"
+			],
+			[
+				"in",
+				"in_solved_pathway"
+			],
+			[
+				"ce",
+				"cell_arg2"
+			],
+			[
+				"c",
+				"cell_arg1"
+			],
+			[
+				"nu",
+				"num_greys"
+			],
+			[
+				"lev",
+				"levels"
+			],
+			[
+				"do",
+				"double"
+			],
+			[
+				"max",
+				"max_grey_val"
+			],
+			[
+				"alloca",
+				"allocating"
+			],
+			[
+				"new",
+				"new_greys"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"out",
+				"output_ptr"
+			],
+			[
+				"ou",
+				"output_ptr"
+			],
+			[
+				"file",
+				"file_ptr"
+			],
+			[
+				"size",
+				"sizeof"
+			],
+			[
+				"pixe",
+				"pixels"
+			],
+			[
+				"to",
+				"total_pixels"
+			],
+			[
+				"PNM",
+				"PNM_image_type"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"cl",
+				"close"
+			],
+			[
+				"svg",
+				"svgFile"
+			],
+			[
+				"sv",
+				"svgFile"
+			],
+			[
+				"EXIT",
+				"EXIT_FAILURE"
+			],
+			[
+				"de",
+				"define"
+			],
+			[
+				"NULL",
+				"NULL_PTR"
+			],
+			[
+				"num",
+				"num_filters_applied"
+			],
+			[
+				"De",
+				"DEFAULT_OUTPUT_FILENAME"
+			],
+			[
+				"DEF",
+				"DEFAULT_INPUT_FILENAME"
+			],
+			[
+				"input",
+				"input_filename"
+			],
+			[
+				"fil",
+				"filter_strings"
+			],
+			[
+				"Ma",
+				"MAX_INPUT"
+			],
+			[
+				"M",
+				"MAX_INPUT"
+			],
+			[
+				"E",
+				"EXIT_FAILURE"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "persistencestrategy.h",
+			"settings":
+			{
+				"buffer_size": 147,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "maze.h",
+			"settings":
+			{
+				"buffer_size": 75,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "solvingstrategy.h",
+			"settings":
+			{
+				"buffer_size": 141,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mazefactory.h",
+			"settings":
+			{
+				"buffer_size": 162,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "squaremaze.h",
+			"settings":
+			{
+				"buffer_size": 585,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "squaremaze.cpp",
+			"settings":
+			{
+				"buffer_size": 939,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cell.h",
+			"settings":
+			{
+				"buffer_size": 509,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cell.cpp",
+			"settings":
+			{
+				"buffer_size": 297,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pathway.h",
+			"settings":
+			{
+				"buffer_size": 408,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pathway.cpp",
+			"settings":
+			{
+				"buffer_size": 21,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/josh/Documents/c++/Maze_generator/solve.cpp",
+		"/home/josh/Documents/c++/Maze_generator/depthbuilder.cpp",
+		"/home/josh/Documents/c++/Maze_generator/depthbuilder.h",
+		"/home/josh/Documents/c++/Maze_generator/main.cpp",
+		"/home/josh/Documents/c++/Maze_generator/Makefile",
+		"/home/josh/Documents/c++/Maze_generator/maze.cpp",
+		"/home/josh/Documents/c++/Maze_generator/README.md",
+		"/home/josh/Documents/c++/Maze_generator/.gitignore",
+		"/home/josh/Documents/c++/Maze_generator/solvingstrategy.h",
+		"/home/josh/Documents/c++/Maze_generator/persistencestrategy.h",
+		"/home/josh/Documents/c++/Maze_generator/maze.h",
+		"/home/josh/Documents/c++/Maze_generator/mazefactory.h",
+		"/home/josh/Documents/c++/Maze_generator/solve.h",
+		"/media/truecrypt1/SSL",
+		"/run/user/1000/gvfs/ftp:host=web1235.ixwebhosting.com/andrewmigliorisi.com/feedback/template/sweeney/style.css",
+		"/run/user/1000/gvfs/ftp:host=web1235.ixwebhosting.com/andrewmigliorisi.com/style.css",
+		"/run/user/1000/gvfs/ftp:host=web1235.ixwebhosting.com/andrewmigliorisi.com/feedback/readme.txt",
+		"/run/user/1000/gvfs/ftp:host=web415.ixwebhosting.com/glenngrech.com/feedback/template/glenn_grech/style.css",
+		"/run/user/1000/gvfs/ftp:host=web1235.ixwebhosting.com/andrewmigliorisi.com/feedback/template/sweeney/admin/style.css",
+		"/run/user/1000/gvfs/ftp:host=web1235.ixwebhosting.com/andrewmigliorisi.com/feedback/template/sweeney/readme.txt",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/osp/assign1/libpnm.h",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/osp/assign1/libpnm.c",
+		"/home/josh/osp/assign1/menu.c",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/osp/assign1/menu.c",
+		"/home/josh/osp/assign1/libpnm.h",
+		"/home/josh/osp/assign1/posterise.c",
+		"/home/josh/osp/assign1/posterise.h",
+		"/home/josh/osp/assign1/negate.c",
+		"/home/josh/osp/assign1/negate.h",
+		"/home/josh/osp/assign1/Makefile",
+		"/home/josh/osp/assign1/libpnm.c",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/c/assign2/tm.h",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/c/assign2/tm_utility.c",
+		"/home/josh/osp/assign1/libmaze.h",
+		"/run/user/1000/gvfs/sftp:host=ftp.negabyte.com.au/home/negabyte/public_html/test/style.css",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/lab3/print_integers.cpp",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/lab3/maze.h",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/lab3/maze.cpp",
+		"/home/josh/osp/assign1/ImageMagick-6.8.9-5/Install-unix.txt",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/lab2/Makefile",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/lab2/print_integers.cpp",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/lab2/print_integers2.cpp",
+		"/media/josh/External/Dev/c/util/utility.c",
+		"/home/josh/.armory/armorylog.txt",
+		"/home/josh/Downloads/Faenza-Cupertino/index.theme",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/Lab1/bin2int.cpp",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/Lab1/Makefile",
+		"/run/user/1000/gvfs/sftp:host=titan.csit.rmit.edu.au/RMIThome/sh4/s3346764/C++/Lab1/int2bin.cpp",
+		"/run/user/1000/gvfs/sftp:host=ftp.negabyte.com.au/home/negabyte/public_html/glenn_test/your-propertys-value/index.php",
+		"/run/user/1000/gvfs/sftp:host=ftp.negabyte.com.au/home/negabyte/public_html/glenn_test/feedback/template/glenn_grech/style.css",
+		"/run/user/1000/gvfs/sftp:host=ftp.negabyte.com.au/home/negabyte/public_html/glenn_test/feedback/add_message.php",
+		"/run/user/1000/gvfs/sftp:host=ftp.negabyte.com.au/home/negabyte/public_html/glenn_test/style.css",
+		"/run/user/1000/gvfs/sftp:host=ftp.negabyte.com.au/home/negabyte/public_html/glenn_test/feedback/template/glenn_grech/add_message.tpl",
+		"/run/user/1000/gvfs/sftp:host=ftp.negabyte.com.au/home/negabyte/public_html/glenn_test/feedback/template/glenn_grech/index.tpl"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"file_ptr"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 8,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "persistencestrategy.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "maze.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 75,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "solvingstrategy.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "mazefactory.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 162,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "squaremaze.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "squaremaze.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 939,
+						"regions":
+						{
+							"mark":
+							{
+								"flags": 144,
+								"icon": "dot",
+								"regions":
+								[
+									[
+										616,
+										616
+									]
+								],
+								"scope": "mark"
+							}
+						},
+						"selection":
+						[
+							[
+								706,
+								706
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "cell.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								509,
+								509
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "cell.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 297,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								297,
+								297
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "pathway.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 408,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								405,
+								405
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "pathway.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								17
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "maze.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
