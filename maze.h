@@ -25,6 +25,9 @@ namespace maze
 	   an entry and exit - will only work for enhanced SVG*/
 	const bool ENTRY_EXIT_PATHS = true;
 
+	/* Enabling this will solve mazes on default (red path in SVG) */
+	const bool SOLVE_MAZE = true;
+
 	/* Don't change */
 	const double WALL_WIDTH = CELL_SIZE_PIXELS * WALL_SIZE_FACTOR;
 	const double PATH_WIDTH = CELL_SIZE_PIXELS - (2 * WALL_WIDTH);/* 2 sides */
@@ -56,15 +59,23 @@ namespace maze
 	{
 		
 		unsigned long y_pos, x_pos;
+		bool path_visited;
 
 		public:
+			Cell() : in_solved_path(false) {} 
+
 			std::vector<Cell *> adjacent_cells;
 			unsigned long get_y_pos();
 			unsigned long get_x_pos();
-			bool cell_visited();
-
-			void set_y_pos(unsigned long y_pos);
+			void set_y_pos(unsigned long y_pos);	
 			void set_x_pos(unsigned long x_pos);
+
+			/* For generation */
+			bool cell_visited(); 
+
+			/* For finding the path */
+			void set_path_visited();
+			bool is_path_visited();
 
 	};
 
@@ -74,6 +85,8 @@ namespace maze
 		std::vector<Edge> edges;
 		Cell ** cells;
 		unsigned long height, width;
+
+		std::stack<Cell *> pathway_cells_stack;
 
 	public:
 		Maze();
@@ -91,6 +104,8 @@ namespace maze
 		bool cell_visited(maze::Cell &cell);
 		
 		void add_edge(maze::Cell &cell1, maze::Cell &cell2);
+
+		void set_pathway(std::stack<Cell *> & pathway_cells);
 
 
 		/* Saving maze */

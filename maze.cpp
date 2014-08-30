@@ -316,6 +316,17 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  			output << "' height='" << current_path_height << "'/>" << "\n";
  		}
 
+
+ 		/* Solved pathway */
+ 		if(SOLVE_MAZE == true)
+ 		{
+ 			
+
+
+
+ 			
+ 		}
+
  		/* Entry and exit paths */
  		if(ENTRY_EXIT_PATHS == true)
  		{
@@ -360,6 +371,11 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  	return true;
  }
 
+ void set_pathway(std::stack<Cell *> & pathway_cells)
+ {
+ 	pathway_cells_stack = pathway_cells;
+ }
+
 
 
  unsigned long maze::Cell::get_y_pos()
@@ -380,6 +396,16 @@ void maze::Maze::resize_clear_maze(unsigned long height, unsigned long width)
  void maze::Cell::set_x_pos(unsigned long x_pos)
  {
  	this->x_pos = x_pos;
+ }
+
+ void maze::Cell::is_path_visited()
+ {
+ 	return path_visited;
+ }
+
+  void maze::Cell::set_path_visited()
+ {
+ 	path_visited = true;
  }
 
 /******************************************************************************
