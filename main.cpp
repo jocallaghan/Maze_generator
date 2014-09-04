@@ -1,5 +1,3 @@
-/* #include "maze.h" */
-
 #include <iostream>
 #include <cstdio>
 #include <cstdlib>
@@ -7,9 +5,15 @@
 #include <string>
 #include <stdexcept>
 #include <climits>
+#include <memory>
 
-#include "depthbuilder.h"
-#include "maze.h"
+
+#include "squaremaze.h"
+#include "depthfirstsearchgenerator.h"
+#include "binaryload.h"
+/* #include "depthfirstsearchsolver.h" */
+#include "binarysave.h"
+#include "svgsave.h"
 
 const std::string GENERATE_FLAG = "-g";
 const std::string LOAD_BIN_FLAG = "--lb";
@@ -27,9 +31,13 @@ int main(int argc, char * argv[])
 	bool output_specified = false;
 	bool saving_binary = false; /* Otherwise saving svg */
 	std::string save_path;
-	unsigned long height, width;
+	unsigned height, width;
 
-	maze::Maze * maze;
+	maze::MazeFactory maze_factory;
+	maze::PersistenceStrategy persisit_strategy;
+	/* maze::SolvingStrategy solving_strategy; */
+
+	std::shared_ptr<maze::Maze> maze;
 	
 	std::string program_name = argv[0];
 	
@@ -90,8 +98,8 @@ int main(int argc, char * argv[])
 						/* There are two more arguments after the seed */
 						try 
 						{
-							height = std::stol(argv[i]);
-							width = std::stol(argv[i+1]);
+							height = (unsigned) std::stol(argv[i]); /* fix this */
+							width = (unsigned) std::stol(argv[i+1]);
 						}
 						catch (const std::invalid_argument& e)
 						{
@@ -102,7 +110,7 @@ int main(int argc, char * argv[])
 						}
 						catch (const std::out_of_range& e)
 						{
-							std::cerr << "Maximum height/width: " << ULONG_MAX;
+							std::cerr << "Maximum height/width: " << UINT_MAX;
 							std::cerr << ".\n\n";
 							argument_error(program_name);
 							return 1;
@@ -197,32 +205,36 @@ int main(int argc, char * argv[])
 		std::cout << "Generating maze.\n";
 		std::cout << "Height: " << height << ". \n";
 		std::cout << "Width: " << width << ". \n";
-		maze = new maze::Maze(height, width);
-		const std::string &seed_ref = seed;
-		const unsigned long &height_ref = height;
-		const unsigned long &width_ref = width;
-		maze::build(maze, height_ref, width_ref, seed_ref);
+
+		maze_factory = maze::DepthFirstSearchGenerator(height, width, seed);
 	}
 	else
 	{
 		std::cout << "Loading maze binary from: " << load_path << ". \n";
-		maze = new maze::Maze(load_path);
+		maze_factory = maze::BinaryLoad(load_path);
 	}
 
 	if(saving_binary)
 	{
 		std::cout << "Saving maze to binary: " << save_path << ". \n";
-		maze->save_maze_to_binary(save_path);
+		persisit_strategy = maze::BinarySave(maze,save_path);
 	}
 	else
 	{
 		std::cout << "Saving maze to SVG: " << save_path << ". \n";
-		maze->save_maze_to_svg(save_path);
+		persisit_strategy = maze::SVGSave(maze,save_path);
 	}
 
-
-	delete maze;
-	
+	/* Perform plan */
+	try 
+	{
+		maze = dynamic_cast<maze::SquareMaze>(&maze_factory.make_maze());
+		persisit_strategy.persist_maze(maze,save_path);
+	}
+	catch (std::runtime_error e)
+	{
+		cerr << e.what();
+	}
 	
 } 
 

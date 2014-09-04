@@ -18,16 +18,16 @@ namespace maze
 
 	}
 
-	maze::Cell * get_cell(unsigned x_position, unsigned y_position)
+	maze::Cell * maze::SquareMaze::get_cell(unsigned x_position, unsigned y_position)
 	{
 		if(x_position >= width)
 		{
-			/* !!!!!!!!!!!!!!!!!!!! Throw exception */
+			return nullptr;
 		}
 
 		if(y_position >= height)
 		{
-			/* !!!!!!!!!!!!!!!!!!!! Throw exception */
+			return nullptr;
 		}
 
 		return &cells[y_position][x_position];

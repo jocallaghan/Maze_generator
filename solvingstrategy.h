@@ -8,5 +8,5 @@ namespace maze
 	{
 		public:
 			virtual void solve_maze(maze::Maze & maze) {};
-	}
+	};
 }

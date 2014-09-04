@@ -6,5 +6,5 @@ namespace maze
 	{
 		public:
 			Maze() {};
-	}
+	};
 }

@@ -1,7 +1,4 @@
-#pragma once
-
-#include "pathway.h"
-#include <vector>
+#include "cell.h"
 
 namespace maze
 {
