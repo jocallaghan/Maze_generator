@@ -33,10 +33,6 @@ int main(int argc, char * argv[])
 	std::string save_path;
 	unsigned height, width;
 
-	maze::MazeFactory maze_factory;
-	maze::PersistenceStrategy persisit_strategy;
-	/* maze::SolvingStrategy solving_strategy; */
-
 	std::shared_ptr<maze::Maze> maze;
 	
 	std::string program_name = argv[0];
@@ -200,36 +196,40 @@ int main(int argc, char * argv[])
 	}
 
 	/* Now we have our configuration */
-	if(generating_maze)
-	{
-		std::cout << "Generating maze.\n";
-		std::cout << "Height: " << height << ". \n";
-		std::cout << "Width: " << width << ". \n";
-
-		maze_factory = maze::DepthFirstSearchGenerator(height, width, seed);
-	}
-	else
-	{
-		std::cout << "Loading maze binary from: " << load_path << ". \n";
-		maze_factory = maze::BinaryLoad(load_path);
-	}
-
-	if(saving_binary)
-	{
-		std::cout << "Saving maze to binary: " << save_path << ". \n";
-		persisit_strategy = maze::BinarySave(maze,save_path);
-	}
-	else
-	{
-		std::cout << "Saving maze to SVG: " << save_path << ". \n";
-		persisit_strategy = maze::SVGSave(maze,save_path);
-	}
-
-	/* Perform plan */
 	try 
 	{
-		maze = maze_factory.make_maze();
-		persisit_strategy.persist_maze();
+		if(generating_maze)
+		{
+			std::cout << "Generating maze.\n";
+			std::cout << "Height: " << height << ". \n";
+			std::cout << "Width: " << width << ". \n";
+
+			maze::DepthFirstSearchGenerator maze_factory(height, width, seed);
+			maze = maze_factory.make_maze();
+
+		}
+		else
+		{
+			std::cout << "Loading maze binary from: " << load_path << ". \n";
+
+			maze::BinaryLoad maze_factory(load_path);
+			maze = maze_factory.make_maze();
+		}
+
+		if(saving_binary)
+		{
+			std::cout << "Saving maze to binary: " << save_path << ". \n";
+
+			maze::BinarySave persisit_strategy(maze,save_path);
+			persisit_strategy.persist_maze();
+		}
+		else
+		{
+			std::cout << "Saving maze to SVG: " << save_path << ". \n";
+
+			maze::SVGSave persisit_strategy(maze,save_path);
+			persisit_strategy.persist_maze();
+		}
 	}
 	catch (std::runtime_error e)
 	{

@@ -1,20 +1,42 @@
 #include "maze.h"
+#include <iostream>
 
 namespace maze
 {
 	maze::Maze::Maze(unsigned height, unsigned width)
 	{
-		/* Initialise outer vector of cells (y-dimention) */
-		cells.resize(height);
 
-		/* Initilise rows of vectors of cells */
+		/* rows of vectors of cells */
 		for(unsigned i = 0; i < height; i++)
 		{
 			std::vector<maze::Cell> current_row;
-			current_row.resize(width);
+
 			/* There will be <width> cells initialised */
+			for(unsigned j = 0; j < width; j++)
+			{
+				Cell new_cell(i, j);
+				current_row.push_back(new_cell);
+			}
+
+
 			cells.push_back(current_row);
 		}
+
+		this->width = width;
+		this->height = height;
+
+
+		/* for(unsigned i = 0; i < height; i++)
+		{
+
+			for (unsigned j = 0; j < width; j++)
+			{
+				std::cout << "Cell [" << i << "][" << j << "] :: ";
+				std::cout << "y_position : " << cells[i][j].get_y_position();
+				std::cout << ", x_position : " << cells[i][j].get_x_position();
+				std::cout << "\n";
+			}
+		} */
 
 	}
 

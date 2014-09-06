@@ -1,4 +1,5 @@
 #include "depthfirstsearchgenerator.h"
+#include <iostream>
 
 namespace maze
 {
@@ -26,7 +27,7 @@ namespace maze
 
     	std::mt19937 mt (seed_long);
 
-    	maze::Cell * current_cell, * next_cell;
+    	maze::Cell * current_cell = nullptr, * next_cell = nullptr;
 
     	std::stack<maze::Cell *> path_stack;
 
@@ -35,43 +36,46 @@ namespace maze
 
     	/* Starting at top left */
     	path_stack.push(maze->get_cell(0, 0));
+
     	number_of_visited_cells++;
 
     	while(number_of_visited_cells < number_of_total_cells)
     	{
         	current_cell = path_stack.top();
-        	unsigned long current_y_pos = current_cell->get_y_position();
-        	unsigned long current_x_pos = current_cell->get_x_position();
+        	unsigned current_y_pos = current_cell->get_y_position();
+        	unsigned current_x_pos = current_cell->get_x_position();
 
         	/* Get unvisited neighbouring cells */
         	std::vector<maze::Cell *> unvisited_neighbours;
         	/* One above - check because cant be negative*/
-			if (current_cell->get_y_position() != 0)
+			if (current_y_pos != 0)
         	{
-				maze::Cell * cell_above = maze->get_cell(current_cell->get_x_position(), current_cell->get_y_position() - 1);
+				maze::Cell * cell_above = maze->get_cell(current_x_pos, current_y_pos - 1);
             	if(cell_above != nullptr)
                 	if(!cell_above->has_pathway())
                     	unvisited_neighbours.push_back(cell_above);
         	}
         
         	/* One below */
-			maze::Cell * cell_below = maze->get_cell(current_cell->get_x_position(), current_cell->get_y_position() + 1);
-        	if(cell_below != NULL)
+
+			maze::Cell * cell_below = maze->get_cell(current_x_pos, current_y_pos + 1);
+        	if(cell_below != nullptr)
             	if(!cell_below->has_pathway())
                 	unvisited_neighbours.push_back(cell_below);
+            
 
         	/* One left - check because unsigned cant be negative*/
 			if (current_cell->get_x_position() != 0)
         	{
-				maze::Cell * cell_left = maze->get_cell(current_cell->get_x_position() - 1, current_cell->get_y_position());
-            	if(cell_left != NULL)
+				maze::Cell * cell_left = maze->get_cell(current_x_pos - 1, current_y_pos);
+            	if(cell_left != nullptr)
                 	if(!cell_left->has_pathway())
                     	unvisited_neighbours.push_back(cell_left);
         	}
         
         	/* One right */
-			maze::Cell * cell_right = maze->get_cell(current_cell->get_x_position() + 1, current_cell->get_y_position());
-        	if(cell_right != NULL)
+			maze::Cell * cell_right = maze->get_cell(current_x_pos + 1, current_y_pos);
+        	if(cell_right != nullptr)
             	if(!cell_right->has_pathway())
                 	unvisited_neighbours.push_back(cell_right);
 
@@ -91,6 +95,8 @@ namespace maze
 			maze->add_pathway(current_cell, next_cell);
         	path_stack.push(next_cell);
         	number_of_visited_cells++;
+
+            current_cell = nullptr;
         
     	}
 

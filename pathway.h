@@ -19,6 +19,6 @@ namespace maze
 			bool is_in_solved_pathway() { return in_solved_pathway; };
 			void set_solved_pathway() { in_solved_pathway = true; };
 			maze::Cell * get_first_cell() { return cell1; };
-			maze::Cell * get_second_cell() { return cell1; };
+			maze::Cell * get_second_cell() { return cell2; };
 	};
 }

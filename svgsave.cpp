@@ -1,5 +1,7 @@
 #include "svgsave.h"
 
+#include <iostream>
+
 
 namespace maze
 {
@@ -14,9 +16,10 @@ namespace maze
  		}
 
  		/* header */
- 		unsigned long box_width = CELL_SIZE_PIXELS * maze->get_width();
- 		unsigned long box_height = CELL_SIZE_PIXELS * maze->get_height();
- 		output << "<svg  width='" << box_width << "' ";
+ 		unsigned offset = WALL_WIDTH * 2; /* Both sides */
+ 		unsigned long box_width = CELL_SIZE_PIXELS * maze->get_width() + offset;
+ 		unsigned long box_height = CELL_SIZE_PIXELS * maze->get_height() + offset;
+ 		output << "<svg width='" << box_width << "' ";
  		output << "height='" << box_height << "' ";
  		output << "xmlns='http://www.w3.org/2000/svg'>" << "\n";
 
@@ -47,38 +50,54 @@ namespace maze
 
  			maze::Cell * first_cell = pathway.get_first_cell();
  			maze::Cell * second_cell = pathway.get_second_cell();
- 			
+
+ 			unsigned x1 = first_cell->get_x_position();
+ 			unsigned x2 = second_cell->get_x_position();
+ 			unsigned y1 = first_cell->get_y_position();
+ 			unsigned y2 = second_cell->get_y_position(); 			
 
  			/* Dimentions depends on the edges/pathways - some in reverse order 
  			(right to left etc) so first we determine which cell is first,
  			then we can work out how to make the rectangle */
-			if (first_cell->get_x_position() < second_cell->get_x_position())
+			if (x1 < x2)
  			{
-				x = first_cell->get_x_position() * CELL_SIZE_PIXELS + WALL_WIDTH;
-				current_path_width = (second_cell->get_x_position() - first_cell->get_x_position() + 1) * CELL_SIZE_PIXELS
- 				- (2 * WALL_WIDTH);
+				x = x1 * CELL_SIZE_PIXELS + offset;
+				current_path_width = 2 * CELL_SIZE_PIXELS - offset;
+					/* (spanning over two cells) */
  			}
- 			else
+ 			else if (x1 > x2)
  			{
-				x = second_cell->get_x_position() * CELL_SIZE_PIXELS + WALL_WIDTH;
-				current_path_width = (first_cell->get_x_position() - second_cell->get_x_position() + 1) * CELL_SIZE_PIXELS
- 				- (2 * WALL_WIDTH);
+				x = x2 * CELL_SIZE_PIXELS + offset;
+				current_path_width = 2 * CELL_SIZE_PIXELS - offset;
+					/* (spanning over two cells) */
  			}
-
-			if (first_cell->get_y_position() < second_cell->get_y_position())
+ 			else /* equal */
  			{
-				y = first_cell->get_y_position() * CELL_SIZE_PIXELS + WALL_WIDTH;
-				current_path_height = (second_cell->get_y_position() - first_cell->get_y_position() + 1) * CELL_SIZE_PIXELS
- 				- (2 * WALL_WIDTH);
- 			}
- 			else
- 			{
-				y = second_cell->get_y_position() * CELL_SIZE_PIXELS + WALL_WIDTH;
-				current_path_height = (first_cell->get_y_position() - second_cell->get_y_position() + 1) * CELL_SIZE_PIXELS
- 				- (2 * WALL_WIDTH);
+ 				x = x2 * CELL_SIZE_PIXELS + offset;
+				current_path_width = CELL_SIZE_PIXELS - offset;
+					/* (spanning over one cell) */
  			}
 
- 			output << "<rect style='";
+			if (y1 < y2)
+ 			{
+				y = y1 * CELL_SIZE_PIXELS + offset;
+				current_path_height = 2 * CELL_SIZE_PIXELS - offset;
+					/* (spanning over two cells) */
+ 			}
+ 			else if (y1 > y2)
+ 			{
+				y = y2 * CELL_SIZE_PIXELS + offset;
+				current_path_height = 2 * CELL_SIZE_PIXELS - offset;
+					/* (spanning over two cells) */
+ 			}
+ 			else /* equal */
+ 			{
+ 				y = y2 * CELL_SIZE_PIXELS + offset;
+				current_path_height = CELL_SIZE_PIXELS - offset;
+					/* (spanning over one cell) */
+ 			}
+
+ 			output << "<rect style='fill:";
  			if(pathway.is_in_solved_pathway())
  				output << SOLVED_PATHWAY_COLOR;
  			else
@@ -92,13 +111,13 @@ namespace maze
 
  		/* Entry and exit paths */
  		output << "<rect style='fill:rgb(255,255,255)' ";
- 		output << " x='0' y='" << WALL_WIDTH << "' width='" << PATH_WIDTH;
+ 		output << " x='0' y='" << offset << "' width='" << PATH_WIDTH;
  		output << "' height='" << PATH_WIDTH << "'/>" << "\n";
 
  		output << "<rect style='fill:rgb(255,255,255)' ";
- 		output << " x='" << (box_width - PATH_WIDTH)  << "' y='";
- 		output << (box_height - PATH_WIDTH - WALL_WIDTH) << "' width='";
- 		output << PATH_WIDTH;
+ 		output << " x='" << (box_width - PATH_WIDTH - offset)  << "' y='";
+ 		output << (box_height - PATH_WIDTH - offset) << "' width='";
+ 		output << PATH_WIDTH + offset;
  		output << "' height='" << PATH_WIDTH << "'/>" << "\n";
 
  		/* footer */

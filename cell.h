@@ -20,6 +20,6 @@ namespace maze
 			void add_pathway(maze::Pathway & pathway);
 			std::vector<maze::Pathway *> * get_pathways() 
 				{ return &pathways; };
-			bool has_pathway() { return pathways.empty(); };
+			bool has_pathway() { return !pathways.empty(); };
 	};
 }

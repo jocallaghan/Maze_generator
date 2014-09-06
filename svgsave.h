@@ -23,7 +23,7 @@ namespace maze
 			virtual void persist_maze();
 
 
-			const static unsigned int WALL_WIDTH = (unsigned int) WALL_SIZE_FACTOR * CELL_SIZE_PIXELS;
-			const static unsigned int PATH_WIDTH = CELL_SIZE_PIXELS - WALL_WIDTH;
+			const static unsigned int WALL_WIDTH = (unsigned)((double) WALL_SIZE_FACTOR * CELL_SIZE_PIXELS);
+			const static unsigned int PATH_WIDTH = CELL_SIZE_PIXELS - 2 * WALL_WIDTH;
 	};
 }

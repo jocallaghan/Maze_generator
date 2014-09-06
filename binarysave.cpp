@@ -47,7 +47,7 @@ namespace maze
 			output.write((char*)&y2, sizeof(y2));
  		}
  		output.close();
-	};
+	}
 
 	
 }

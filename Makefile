@@ -1,7 +1,7 @@
 CFLAGS	= -Wall -Wextra -pedantic -std=c++11 -g -ggdb
 PROG	= maze
-OBJ	= squaremaze.o main.o cell.o pathway.o svgsave.o binarysave.o \
-depthfirstsearchsave.o binaryload.o depthfirstsearchgenerator.o
+OBJ	= maze.o main.o cell.o pathway.o svgsave.o binarysave.o \
+binaryload.o depthfirstsearchgenerator.o
 
 %.o: %.cpp
 	@echo "Compiling........"

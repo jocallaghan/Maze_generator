@@ -2,13 +2,17 @@
 
 #include "maze.h"
 #include <string>
+#include <stdexcept>
 
 namespace maze
 {
 	class PersistenceStrategy
 	{
 		public:
-			virtual void persist_maze() {};
+			virtual void persist_maze() = 0;
+			PersistenceStrategy() {};
+			~PersistenceStrategy() {};
+
 	};
 
 	class CannotPersistMaze : public std::runtime_error
