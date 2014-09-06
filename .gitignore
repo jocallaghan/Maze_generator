@@ -21,9 +21,6 @@
 *.app
 maze
 
-# sublime
-*.sublime-project
-*.sublime-workspace
 
 # Maze images + binary files
 *.svg
