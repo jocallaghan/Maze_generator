@@ -20,6 +20,6 @@ namespace maze
 		public:
 			CannotGenerateMaze(const std::string& message)
 				: std::runtime_error("Cannot generate maze: " +
-					message) {};
+					message + "\n") {};
 	};
 }

@@ -1,5 +1,7 @@
 #include "binarysave.h"
 
+#include <iostream>
+
 namespace maze
 {
 
@@ -22,20 +24,25 @@ namespace maze
  		std::vector<maze::Pathway> * pathways = maze->get_pathways();
 
 		/* Write headers */
- 		const char number_edges = (char)pathways->size();
-		const char height = (char)maze->get_height();
-		const char width = (char)maze->get_width();
+ 		const unsigned number_edges = pathways->size();
+		const unsigned height = maze->get_height();
+		const unsigned width = maze->get_width();
 		output.write((char*)&width, sizeof(width));
 		output.write((char*)&height, sizeof(height));
 		output.write((char*)&number_edges, sizeof(number_edges));
+
+
+		/*std::cout << "Width: " << width << ", height: " << height << ", number_edges: ";
+ 		std::cout << number_edges << "\n";*/
+
 			
 		/* Edges/pathways */
  		for(maze::Pathway pathway : *pathways)
  		{
-			const char x1 = pathway.get_first_cell()->get_x_position();
-			const char x2 = pathway.get_second_cell()->get_x_position();
-			const char y1 = pathway.get_first_cell()->get_y_position();
-			const char y2 = pathway.get_second_cell()->get_y_position();
+			const unsigned x1 = pathway.get_first_cell()->get_x_position();
+			const unsigned x2 = pathway.get_second_cell()->get_x_position();
+			const unsigned y1 = pathway.get_first_cell()->get_y_position();
+			const unsigned y2 = pathway.get_second_cell()->get_y_position();
 
 			/* x1 */
 			output.write((char*)&x1, sizeof(x1));
