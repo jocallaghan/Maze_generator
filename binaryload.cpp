@@ -1,10 +1,13 @@
 #include "binaryload.h"
+#include <iostream>
+#include <string>
 
 namespace maze
 {
 	std::shared_ptr<maze::Maze> maze::BinaryLoad::make_maze()
 	{
-		std::fstream binaryFile(file_path, std::ios::in | std::ios::binary);
+		std::fstream binaryFile(file_path, std::fstream::in | std::fstream::binary);
+
  		unsigned width = 0, height = 0, numEdges = 0;
 
 
@@ -31,6 +34,9 @@ namespace maze
  			throw maze::CannotGenerateMaze("Height cannot be less than 1");
  		}
 
+ 		/*std::cout << "Width: " << width << ", height: " << height << ", numEdges: ";
+ 		std::cout << numEdges << "\n";*/
+
 		/* Initialize maze object */
 		std::shared_ptr<maze::Maze> maze(new Maze(height, width));
 
@@ -39,7 +45,7 @@ namespace maze
 		/* edges */
  		while(readEdges < numEdges && !binaryFile.eof())
  		{
-			unsigned x1, x2, y1, y2;
+			unsigned x1 = 0, x2 = 0, y1 = 0, y2 = 0;
 
 			/* Get data from file */
 			/* x1 */
@@ -52,10 +58,29 @@ namespace maze
  			binaryFile.read((char*)&y2, sizeof(y2));
 
  			/* Test data */
-			if (x1 >= maze->get_width() || x2 >= maze->get_width() || y1 >= maze->get_height() || y2 >= maze->get_height())
+ 			std::string message;
+
+ 			if(x1 >= maze->get_width())
  			{
- 				throw maze::CannotGenerateMaze("Edge out of bounds");
+ 				message = "Edge out of bounds: x1: " + std::to_string(x1);
+ 				
  			}
+ 			else if(x2 >= maze->get_width())
+ 			{
+ 				message = "\nEdge out of bounds: x2: " + std::to_string(x2);
+ 			}
+ 			else if(y1 >= maze->get_height())
+ 			{
+ 				message = "\nEdge out of bounds: y1: " + std::to_string(y1);
+ 			}
+ 			else if(y2 >= maze->get_height())
+ 			{
+ 				message = "\nEdge out of bounds: y2: " + std::to_string(y2);
+ 			}
+
+ 			if(message != "")
+ 				throw maze::CannotGenerateMaze(message);
+
 
 			/* Add pathway to maze */
 			maze->add_pathway(maze->get_cell(x1, y1), maze->get_cell(x2, y2));
