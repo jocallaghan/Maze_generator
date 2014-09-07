@@ -25,7 +25,3 @@ maze
 # Maze images + binary files
 *.svg
 *.maze
-
-# sublime
-*.sublime-workspace
-*.sublime-project
