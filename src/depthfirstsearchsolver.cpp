@@ -1,6 +1,6 @@
 #include "depthfirstsearchsolver.h"
 
-DepthFirstSearchSolver(maze::Maze & maze)
+maze::DepthFirstSearchSolver::DepthFirstSearchSolver(maze::Maze & maze)
 {
    this->maze = &maze;
 }
@@ -12,15 +12,15 @@ DepthFirstSearchSolver(maze::Maze & maze)
 * the end cell (0,0) and (height - 1, width - 1).
 * Updates pathway objects if they are in the solved path.
 *****************************************************************************/
-void solve_maze()
+void maze::DepthFirstSearchSolver::solve_maze()
 {
     std::stack<maze::Pathway *> pathway_stack;
     std::stack<maze::Cell *> cell_stack;
+	std::unordered_map<
     maze::Pathway * current_pathway = nullptr;
     maze::Pathway * adj_pathway = nullptr;
     maze::Cell * current_cell = nullptr;
 
-    bool cell_visited[maze->get_height()][maze->get_width()];
 
     maze::Cell * first_cell = maze->get_cell(0, 0);
     maze::Cell * last_cell = maze->get_cell(maze->get_height() - 1, maze->get_width() - 1);

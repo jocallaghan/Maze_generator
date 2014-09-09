@@ -3,6 +3,8 @@
 
 #include "maze.h"
 #include "Solvingstrategy.h"
+#include <stack>
+#include <unordered_map>
 
 namespace maze
 {
