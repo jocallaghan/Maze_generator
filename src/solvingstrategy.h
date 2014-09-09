@@ -10,7 +10,7 @@ namespace maze
 	class SolvingStrategy
 	{
 		public:
-			virtual void solve_maze(maze::Maze & maze) = 0;
+			virtual void solve_maze() = 0;
             SolvingStrategy() {};
             ~SolvingStrategy() {};
 	};
@@ -18,7 +18,7 @@ namespace maze
     class CannotSolveMaze : public std::runtime_error
     {
         public:
-            CannotGenerateMaze(const std::string& message)
+            CannotSolveMaze(const std::string& message)
                 : std::runtime_error("Cannot solve maze: " +
                     message) {};
     };
