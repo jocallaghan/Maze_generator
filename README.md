@@ -48,4 +48,12 @@ in the program using the last one.
 
 
 #### TODO
-Add functionality to "solve" a maze
+Add functionality to "solve" a maze (Part 2)
+
+
+
+
+##### FIXES NEEDED
+* Make sure the loading and saving of edges are INTS and not LONGS!!
+* Change seed from string to number
+* Validate binary files
