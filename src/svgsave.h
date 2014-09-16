@@ -18,6 +18,8 @@ namespace maze
 		std::shared_ptr<maze::Maze> maze;
 		std::string file_path;
 
+		void output_pathway(maze::Pathway & pathway, unsigned offset, std::fstream & output);
+
 		public:
 			SVGSave(std::shared_ptr<maze::Maze> maze, std::string file_path) : maze(maze), file_path(file_path) {};
 			virtual void persist_maze();

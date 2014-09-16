@@ -21,7 +21,7 @@ namespace maze
  			throw maze::CannotPersistMaze("Could not open file");
  		}
 
- 		std::vector<maze::Pathway> * pathways = maze->get_pathways();
+ 		std::vector<maze::Pathway *> * pathways = maze->get_pathways();
 
 		/* Write headers */
  		const unsigned number_edges = pathways->size();
@@ -37,12 +37,12 @@ namespace maze
 
 			
 		/* Edges/pathways */
- 		for(maze::Pathway pathway : *pathways)
+ 		for(maze::Pathway * pathway : *pathways)
  		{
-			const unsigned x1 = pathway.get_first_cell()->get_x_position();
-			const unsigned x2 = pathway.get_second_cell()->get_x_position();
-			const unsigned y1 = pathway.get_first_cell()->get_y_position();
-			const unsigned y2 = pathway.get_second_cell()->get_y_position();
+			const unsigned x1 = pathway->get_first_cell()->get_x_position();
+			const unsigned x2 = pathway->get_second_cell()->get_x_position();
+			const unsigned y1 = pathway->get_first_cell()->get_y_position();
+			const unsigned y2 = pathway->get_second_cell()->get_y_position();
 
 			/* x1 */
 			output.write((char*)&x1, sizeof(x1));

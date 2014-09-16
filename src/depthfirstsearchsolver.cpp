@@ -1,4 +1,5 @@
 #include "depthfirstsearchsolver.h"
+#include <iostream>
 
 maze::DepthFirstSearchSolver::DepthFirstSearchSolver(maze::Maze & maze)
 {
@@ -16,19 +17,20 @@ void maze::DepthFirstSearchSolver::solve_maze()
 {
     std::stack<maze::Pathway *> pathway_stack;
     std::stack<maze::Cell *> cell_stack;
-	std::unordered_map<
-    maze::Pathway * current_pathway = nullptr;
-    maze::Pathway * adj_pathway = nullptr;
+	std::unordered_set<maze::Pathway *> pathway_set;
+
     maze::Cell * current_cell = nullptr;
+
+    bool found_pathway;
 
 
     maze::Cell * first_cell = maze->get_cell(0, 0);
-    maze::Cell * last_cell = maze->get_cell(maze->get_height() - 1, maze->get_width() - 1);
+    maze::Cell * last_cell = maze->get_cell(maze->get_width() - 1, maze->get_height() - 1);
 
     if(first_cell == nullptr || last_cell == nullptr)
         throw maze::CannotSolveMaze("not initialised");
 
-    cell_stack.push_back(first_cell);
+    cell_stack.push(first_cell);
 
     while(true)
     {
@@ -36,30 +38,73 @@ void maze::DepthFirstSearchSolver::solve_maze()
         if(current_cell == nullptr)
             throw maze::CannotSolveMaze("could not reach last cell");
 
-        current_pathway = nullptr;
+        /*std::cerr << "\n=====\ncurrent cell: x: " << current_cell->get_x_position()
+            << ", y: " << current_cell->get_y_position() << "\n";*/
+
         /* Get next unvisited pathway */
-        for(auto pathway_ptr : *current_cell->get_pathways())
+        for(maze::Pathway * pathway_ptr : *current_cell->get_pathways())
         {
-            if(!cell->is_path_visited())
+            found_pathway = false;
+
+            /*if(pathway_ptr == nullptr)
+                std::cerr << "NULL\n";
+            else
             {
-                adj_cell = cell;
+                std::cerr << "found pathway: ";
+                std::cerr << "x1: " << pathway_ptr->get_first_cell()->get_x_position() 
+                    << ", y1: " << pathway_ptr->get_first_cell()->get_y_position()
+                    << ", x2: " << pathway_ptr->get_second_cell()->get_x_position() 
+                    << ", y2: " << pathway_ptr->get_second_cell()->get_y_position() << "\n";
+            }*/
+
+
+            std::unordered_set<maze::Pathway *>::const_iterator found_in_pathway_set =
+                pathway_set.find(pathway_ptr);
+
+            if(found_in_pathway_set == pathway_set.end())
+            {
+                /*std::cerr << "NOT IN VISTED SET - adding\n";*/
+
+                /* not in pathways, add and push */
+                pathway_set.insert(pathway_ptr);
+                pathway_stack.push(pathway_ptr);
+
+                /* add adjacent cell to cell stack */
+                if(pathway_ptr->get_first_cell() != current_cell)
+                    cell_stack.push(pathway_ptr->get_first_cell());
+                else if(pathway_ptr->get_second_cell() != current_cell)
+                    cell_stack.push(pathway_ptr->get_second_cell());
+                else
+                    throw maze::CannotSolveMaze("error with edge");
+
+                found_pathway = true;
+
                 break;
             }
+            /*else
+            {
+                std::cerr << "in visited set - ignoring\n";
+            }*/
         }
-        if(adj_cell == nullptr)
+
+        if(!found_pathway)
         {
             /* No unvisited adjacent cells - if end; break loop, if not; pop stack */
-            if(current_cell == &end_cell)
+            if(current_cell == last_cell)
                 break;
             else
-                path_of_cells.pop();
-        }
-        else
-        {
-            /* We have an adjacent cell - push to stack and mark as visited */
-            path_of_cells.push(adj_cell)
-            adj_cell.set_path_visited();
+            {
+                /*pathway_set.erase(pathway_stack.top());*/
+                pathway_stack.pop();
+                cell_stack.pop();
+            }
         }
     }
-    maze.set_pathway(path_of_cells);
+
+    /* Now go through the pathways in our solved stack and mark each one */
+    while(pathway_stack.size() > 0)
+    {
+        pathway_stack.top()->set_solved_pathway();
+        pathway_stack.pop();
+    }
 }

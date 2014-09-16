@@ -8,8 +8,8 @@ namespace maze
 		this->y_position = y_position;
 	}
 
-	void maze::Cell::add_pathway(maze::Pathway & pathway)
+	void maze::Cell::add_pathway(maze::Pathway * pathway)
 	{
-		pathways.push_back(&pathway);
+		pathways.push_back(pathway);
 	}
 }

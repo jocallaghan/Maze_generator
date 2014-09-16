@@ -2,9 +2,9 @@
 
 
 #include "maze.h"
-#include "Solvingstrategy.h"
+#include "solvingstrategy.h"
 #include <stack>
-#include <unordered_map>
+#include <unordered_set>
 
 namespace maze
 {
@@ -14,7 +14,7 @@ namespace maze
 
 		public:
 			void solve_maze() override;
-            DepthFirstSearchSolver(maze::Maze & maze) {};
+            DepthFirstSearchSolver(maze::Maze & maze);
             ~DepthFirstSearchSolver() {};
 	};
 }

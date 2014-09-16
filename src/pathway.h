@@ -38,12 +38,21 @@ namespace std
 	template <>
 	struct hash< maze::Pathway * >
 	{
-		size_t operator()(maze::Pathway * const & pathway) const noexcept
+		std::size_t operator()(maze::Pathway * const & pathway) const noexcept
 		{
 			return (
-			(PRIME_NUM + std::hash<long>()((long)pathway->get_first_cell()))
-			* PRIME_NUM + std::hash<long>()((long)pathway->get_second_cell())
+			(PRIME_NUM + std::hash<std::size_t>()((std::size_t)pathway))
+			* PRIME_NUM + std::hash<std::size_t>()((std::size_t)pathway)
 			);
 		}
 	};
+
+	/*template <>
+	struct equal_to< maze::Pathway *>
+	{
+		bool operator()(const maze::Pathway & first, const maze::Pathway & second)
+		{
+			return first == second;
+		}
+	};*/
 }

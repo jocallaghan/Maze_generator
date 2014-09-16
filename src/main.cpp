@@ -11,12 +11,19 @@
 #include "maze.h"
 #include "depthfirstsearchgenerator.h"
 #include "binaryload.h"
-/* #include "depthfirstsearchsolver.h" */
+#include "depthfirstsearchsolver.h"
 #include "binarysave.h"
 #include "svgsave.h"
+#include "time.h"
 
-const std::string GENERATE_FLAG = "-g";
-const std::string LOAD_BIN_FLAG = "--lb";
+const std::string GENERATE_RECURSIVE_FLAG = "--gr";
+const std::string GENERATE_KRUSKAL_FLAG = "--gk";
+const std::string LOAD_BIN_FLAG = "--lb";	
+
+const std::string SOLVE_DEPTH_FIRST_FLAG = "--pd";
+const std::string SOLVE_BREATH_FIRST_FLAG = "--pb";
+const std::string SOLVE_A_STAR_FLAG = "--pa";
+
 const std::string SAVE_BIN_FLAG = "--sb"; 
 const std::string SAVE_SVG_FLAG = "--sv"; 
 
@@ -24,39 +31,26 @@ void argument_error(std::string program_name);
 
 int main(int argc, char * argv[])
 {
-	bool input_specified = false;
-	bool generating_maze = false; /* Otherwise loading binary */
+	bool generating_recursive = false;
+	bool generating_kruskal = false;
+	bool loading_binary = false;
 	std::string seed;
 	std::string load_path;
-	bool output_specified = false;
-	bool saving_binary = false; /* Otherwise saving svg */
+
+	bool saving_binary = false;
+	bool saving_svg = false;
 	std::string save_path;
 	unsigned height, width;
+
+	bool solving_depth_first = false;
+	bool solving_breadth_first = false;
+	bool solving_a_star = false;
 
 	std::shared_ptr<maze::Maze> maze;
 	
 	std::string program_name = argv[0];
 	
-	
-	/* ###QUOTE ASSIGNMENT### our program should be able to run from the command 
-	line, with arguments to specify how the program should run, ie:
-	./exe --lb filename.maze --sv filename.svg # load binary file and save svg 
-	    file
-	./exe -g seed --sb filename.maze # generate with seed value, save binary 
-	    file
-	./exe -g seed --sv filename.svg # generate with seed value, save svg file
-	./exe -g seed --sb filename.maze --sv filename.svg # gen with seed, save 
-	    binary, save svg
-
-	You should also be able to specify the width/height of the maze when 
-	generating (but not when loading), ie:
-
-	./exe -g seed width height …
-
-	Note that command line args can be given in any order, and an appropriate 
-	error message should be given if inappropriate args are entered. */
-	
-	/* Now go through the arguments */
+	/* Go through the arguments */
 	for(int i = 1; i < argc; i++) /* Skip program name */
 	{
 		std::string current_argument = argv[i];
@@ -71,11 +65,9 @@ int main(int argc, char * argv[])
 		}
 
 
-		if(current_argument == GENERATE_FLAG)
+		if(current_argument == GENERATE_RECURSIVE_FLAG)
 		{
-			generating_maze = true;
-			input_specified = true;
-			/* now try grab seed */
+			generating_recursive = true;
 			if(next_argument == "") /* No more arguments! */
 			{
 				std::cerr << "Found generate flag without subsequent data.\n\n";
@@ -124,11 +116,14 @@ int main(int argc, char * argv[])
 					}
 			}
 		}
+		else if(current_argument == GENERATE_KRUSKAL_FLAG)
+		{
+			generating_kruskal = true;
+		}
 		else if(current_argument == LOAD_BIN_FLAG)
 		{
-			generating_maze = false;
-			input_specified = true;
-			/* Now try grab filepath */
+			loading_binary = true;
+
 			if(next_argument == "") /* No more arguments! */
 			{
 				std::cerr << "Found load flag without subsequent data.\n\n";
@@ -141,11 +136,21 @@ int main(int argc, char * argv[])
 					i++; /* we no longer need to read the argument */
 			}
 		}
+		else if(current_argument == SOLVE_DEPTH_FIRST_FLAG)
+		{
+			solving_depth_first = true;
+		}
+		else if(current_argument == SOLVE_BREATH_FIRST_FLAG)
+		{
+			solving_breadth_first = true;
+		}
+		else if(current_argument == SOLVE_A_STAR_FLAG)
+		{
+			solving_a_star = true;
+		}
 		else if(current_argument == SAVE_BIN_FLAG)
 		{
-			output_specified = true;
 			saving_binary = true;
-			/* Now try grab filepath */
 			if(next_argument == "") /* No more arguments! */
 			{
 				std::cerr << "Found save bin flag without subsequent data.\n\n";
@@ -160,9 +165,7 @@ int main(int argc, char * argv[])
 		}
 		else if(current_argument == SAVE_SVG_FLAG)
 		{
-			output_specified = true;
-			saving_binary = false;
-			/* Now try grab filepath */
+			saving_svg = true;
 			if(next_argument == "") /* No more arguments! */
 			{
 				std::cerr << "Found save svg flag without subsequent data.\n\n";
@@ -187,20 +190,70 @@ int main(int argc, char * argv[])
 
 	/* Now that we have gone through all the arguments, lets see the validity */
 
-	if(!input_specified || !output_specified)
+	/* Test input flags */
+	if(!generating_recursive && !generating_kruskal && !loading_binary)
 	{
-		/* We need a type of input and output */
-		std::cerr << "Missing input or output.\n\n";
+		std::cerr << "Missing input.\n\n";
+		argument_error(program_name);
+		return 1;
+	}
+	else if(
+		(generating_recursive && generating_kruskal) ||
+		(generating_recursive && loading_binary) ||
+		(generating_kruskal && loading_binary)
+		)
+	{
+		std::cerr << "Too many types of input flags.\n\n";
 		argument_error(program_name);
 		return 1;
 	}
 
+	/* Test solving flags */
+	if(
+		(solving_depth_first && solving_breadth_first) ||
+		(solving_depth_first && solving_a_star) ||
+		(solving_breadth_first && solving_a_star)
+		)
+	{
+		std::cerr << "Too many types of solving flags.\n\n";
+		argument_error(program_name);
+		return 1;
+	}
+
+	/* Test output flags */
+	if(!saving_binary && !saving_svg)
+	{
+		std::cerr << "Missing output flag.\n\n";
+		argument_error(program_name);
+		return 1;
+	}
+	else if(saving_binary && saving_svg)
+	{
+		std::cerr << "Too many types of output flags.\n\n";
+		argument_error(program_name);
+		return 1;
+	}
+
+
+	if(saving_binary)
+	{
+		if(solving_breadth_first || solving_a_star || solving_depth_first)
+		{
+			std::cerr << "Note that solved pathways wont be saved in binary files.\n";
+		}
+	}
+
+
+
 	/* Now we have our configuration */
 	try 
 	{
-		if(generating_maze)
+
+		maze::Time timer;
+
+		if(generating_recursive)
 		{
-			std::cout << "Generating maze.\n";
+			std::cout << "Generating maze with recursive.\n";
 			std::cout << "Height: " << height << ". \n";
 			std::cout << "Width: " << width << ". \n";
 
@@ -208,13 +261,36 @@ int main(int argc, char * argv[])
 			maze = maze_factory.make_maze();
 
 		}
-		else
+		else if(generating_kruskal)
+		{
+			std::cout << "Generating maze with kruskal.\n";
+			std::cout << "Height: " << height << ". \n";
+			std::cout << "Width: " << width << ". \n";
+		}
+		else if(loading_binary)
 		{
 			std::cout << "Loading maze binary from: " << load_path << ". \n";
 
 			maze::BinaryLoad maze_factory(load_path);
 			maze = maze_factory.make_maze();
 		}
+
+		if(solving_depth_first)
+		{
+			std::cout << "Solving maze with depth first search.\n";
+
+			maze::DepthFirstSearchSolver depth_first_search_solver(*maze.get());
+			depth_first_search_solver.solve_maze();
+		}
+		else if(solving_breadth_first)
+		{
+			std::cout << "Solving maze with breadth first search.\n";
+		}
+		else if(solving_a_star)
+		{
+			std::cout << "Solving maze with A* search.\n";
+		}
+
 
 		if(saving_binary)
 		{
@@ -223,13 +299,15 @@ int main(int argc, char * argv[])
 			maze::BinarySave persisit_strategy(maze,save_path);
 			persisit_strategy.persist_maze();
 		}
-		else
+		else if(saving_svg)
 		{
 			std::cout << "Saving maze to SVG: " << save_path << ". \n";
 
 			maze::SVGSave persisit_strategy(maze,save_path);
 			persisit_strategy.persist_maze();
 		}
+
+		std::cout << "Total time: " << timer.milliseconds_since() << " milliseconds. \n";
 	}
 	catch (std::runtime_error e)
 	{

@@ -57,11 +57,24 @@ namespace maze
 
 	void maze::Maze::add_pathway(maze::Cell * cell1, maze::Cell * cell2)
 	{
-		maze::Pathway pathway = Pathway(cell1, cell2);
-		pathways.push_back(pathway);
+		if(cell1 == nullptr || cell2 == nullptr)
+		{
+			std::cerr << "error creating path\n";
+		}
 
-		cell1->add_pathway(pathway);
-		cell2->add_pathway(pathway);
+		maze::Pathway * pathway =  new Pathway(cell1, cell2);
+		pathways.push_back(pathway);
+		cell1->add_pathway(pathways[pathways.size() - 1]);
+		cell2->add_pathway(pathways[pathways.size() - 1]);
+
+
+		/*std::cerr << "Numpathways: " << pathways.size() << "\n";
+		std::cerr << "x1: " << pathways.back()->get_first_cell()->get_x_position() 
+			<< ", y1: " << pathways.back()->get_first_cell()->get_y_position()
+			<< ", x2: " << pathways.back()->get_second_cell()->get_x_position() 
+			<< ", y2: " << pathways.back()->get_second_cell()->get_y_position() << "\n";*/
+
+
 	}
 
 }
