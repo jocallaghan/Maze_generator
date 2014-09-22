@@ -16,8 +16,7 @@ The reason I had implemented the program in this way is because specifying the
 number of cells as the width and height would result in bad aesthetics, and
 possible loss of functionality for larger mazes.
 
-The generator is a depth-first search with backtracking. (see 
-https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker)
+The generator is a depth-first search with backtracking. 
 
 A class diagram can be found in design.svg
 
@@ -33,27 +32,50 @@ To remove the compiled files, simply call
 
 
 ### Usage
-./maze -g seed height width --sb output.maze   (generate binary)
 
-./maze -g seed height width --sv output.svg    (generate SVG)
+#### Flags
+###### --gr seed height width
+Recursive backtrack maze generation (see https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker).
+All arguments must be unsigned integers (or strings represented as).
 
-./maze --lb binary_file.maze --sv output.svg   (binary to SVG)
+###### --gk seed height width
+Randomised Kruskal maze generation (see https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal.27s_algorithm).
+All arguments must be unsigned integers (or strings represented as).
 
-Seed can be any string and mazes with the same seed, width and height will always
-look the same.
+###### --lb binary_file
+Load a binary file that represents a maze.
+
+###### --pd
+Solve maze using a depth-first search strategy. 
+Won't affect binary output, will change color of paths in SVG output.
+
+###### --sb binary_file
+Saves a maze to a binary file
+
+###### --sv svg_file
+Saves a maze to a SVG
+
+##### Examples
+
+./maze --g 23411 10 10 --sb output.maze   (generate binary maze file with seed 23411 and h/w: 10/10)
+
+./maze -g 22 5 10 --sv output.svg    (generate SVG maze file with seed 22 and h/w: 5/10)
+
+./maze --lb binary_file.maze --pd --sv output.svg   (binary file to SVG with depth first solve)
+
 
 You may use the argument flags in any order, but make sure you keep their own args 
 in order (-g seed height width). Using the same flag more than once will result
 in the program using the last one.
 
+You must use one input and one output type. Using a solving strategy is optional.
+
 
 #### TODO
-Add functionality to "solve" a maze (Part 2)
+Add more solving strategies.
 
 
 
 
 ##### FIXES NEEDED
-* Make sure the loading and saving of edges are INTS and not LONGS!!
-* Change seed from string to number
 * Validate binary files

@@ -2,19 +2,20 @@
 
 #include "maze.h"
 #include "mazefactory.h"
+#include "disjoint_set.hpp"
 #include <string>
 #include <stack>
 #include <random>
-#include <iostream>
+#include <algorithm>
 
 namespace maze
 {
-	class DepthFirstSearchGenerator : public MazeFactory
+	class KruskalGenerator : public MazeFactory
 	{
 		unsigned height, width, seed;
 
 		public:
-			DepthFirstSearchGenerator(unsigned height_, unsigned width_, unsigned seed_):
+			KruskalGenerator(unsigned height_, unsigned width_, unsigned seed_):
 				height(height_), width(width_), seed(seed_) {};
 			virtual std::shared_ptr<maze::Maze> make_maze() override;
 	};

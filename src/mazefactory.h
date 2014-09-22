@@ -13,6 +13,8 @@ namespace maze
 			virtual std::shared_ptr<maze::Maze> make_maze() = 0;
 			MazeFactory() {};
 			~MazeFactory() {};
+
+			
 	};
 
 	class CannotGenerateMaze : public std::runtime_error

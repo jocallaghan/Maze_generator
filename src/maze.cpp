@@ -9,13 +9,13 @@ namespace maze
 		/* rows of vectors of cells */
 		for(unsigned i = 0; i < height; i++)
 		{
-			std::vector<maze::Cell> current_row;
+			std::vector<maze::Cell *> current_row;
 
 			/* There will be <width> cells initialised */
 			for(unsigned j = 0; j < width; j++)
 			{
-				Cell new_cell(i, j);
-				current_row.push_back(new_cell);
+				Cell * new_c = new Cell(i, j);
+				current_row.push_back(new_c);
 			}
 
 
@@ -52,7 +52,7 @@ namespace maze
 			return nullptr;
 		}
 
-		return &cells[y_position][x_position];
+		return cells[y_position][x_position];
 	}
 
 	void maze::Maze::add_pathway(maze::Cell * cell1, maze::Cell * cell2)
@@ -75,6 +75,40 @@ namespace maze
 			<< ", y2: " << pathways.back()->get_second_cell()->get_y_position() << "\n";*/
 
 
+	}
+
+	void maze::Maze::add_pathway(maze::Pathway * pathway)
+	{
+		pathways.push_back(pathway);
+
+		/* Make sure the cells have a pointer to this */
+		pathway->get_first_cell()->add_pathway(pathway);
+		pathway->get_second_cell()->add_pathway(pathway);
+
+
+	}
+
+	Maze::~Maze()
+	{
+
+		/* rows of vectors of cells */
+		for(unsigned i = 0; i < height; i++)
+		{
+			std::vector<maze::Cell *> * current_row = &cells[i];
+
+			/* There will be <width> cells initialised */
+			for(unsigned j = 0; j < width; j++)
+			{
+				delete (*current_row)[j];
+			}
+		}
+
+		/* Pathways */
+
+		for(Pathway * pathway_ptr : pathways)
+		{
+			delete pathway_ptr;
+		}
 	}
 
 }

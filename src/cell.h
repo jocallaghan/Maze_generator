@@ -15,6 +15,7 @@ namespace maze
 		public:
 			Cell(unsigned y_position, unsigned x_position);
 			Cell(): x_position(0), y_position(0) {};
+			~Cell() {};
 			unsigned get_x_position() { return x_position; };
 			unsigned get_y_position() { return y_position; }
 			void add_pathway(maze::Pathway * pathway);

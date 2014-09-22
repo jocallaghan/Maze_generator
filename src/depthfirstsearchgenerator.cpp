@@ -17,15 +17,7 @@ namespace maze
     	/* Initialize maze object */
     	std::shared_ptr<maze::Maze> maze(new Maze(height, width));
 
-    	/* Convert string - sum ASCII values */
-    	unsigned seed_long = 0;
-
-    	for(unsigned i = 0; i < seed.length(); i++)
-    	{
-    		seed_long += static_cast<unsigned>(seed[i]);
-    	}
-
-    	std::mt19937 mt (seed_long);
+    	std::mt19937 mt (seed);
 
     	maze::Cell * current_cell = nullptr, * next_cell = nullptr;
 

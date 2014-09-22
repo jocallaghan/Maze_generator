@@ -10,6 +10,7 @@
 
 #include "maze.h"
 #include "depthfirstsearchgenerator.h"
+#include "kruskalgenerator.h"
 #include "binaryload.h"
 #include "depthfirstsearchsolver.h"
 #include "binarysave.h"
@@ -34,7 +35,7 @@ int main(int argc, char * argv[])
 	bool generating_recursive = false;
 	bool generating_kruskal = false;
 	bool loading_binary = false;
-	std::string seed;
+	unsigned seed;
 	std::string load_path;
 
 	bool saving_binary = false;
@@ -65,9 +66,14 @@ int main(int argc, char * argv[])
 		}
 
 
-		if(current_argument == GENERATE_RECURSIVE_FLAG)
+		if(current_argument == GENERATE_RECURSIVE_FLAG || current_argument == GENERATE_KRUSKAL_FLAG)
 		{
-			generating_recursive = true;
+			if(current_argument == GENERATE_RECURSIVE_FLAG)
+				generating_recursive = true;
+			else
+				generating_kruskal = true;
+
+
 			if(next_argument == "") /* No more arguments! */
 			{
 				std::cerr << "Found generate flag without subsequent data.\n\n";
@@ -76,8 +82,24 @@ int main(int argc, char * argv[])
 			}
 			else
 			{
-					seed = next_argument;
-					i+=2; /* we no longer need to read the flag + seed */
+					try
+					{
+						seed = (unsigned) std::stol(next_argument);
+						i += 2; /* we no longer need to read the flag + seed */
+					}
+					catch (const std::invalid_argument)
+					{
+						std::cerr << "Seed has to be number.\n\n";
+						argument_error(program_name);
+						return 1;
+					}
+					catch (const std::out_of_range)
+					{
+						std::cerr << "Maximum seed: " << UINT_MAX << ".\n\n";
+						argument_error(program_name);
+						return 1;
+					}
+					
 
 
 					/* Now test for height / width */
@@ -256,16 +278,20 @@ int main(int argc, char * argv[])
 			std::cout << "Generating maze with recursive.\n";
 			std::cout << "Height: " << height << ". \n";
 			std::cout << "Width: " << width << ". \n";
+			std::cout << "Seed: " << seed << ". \n";
 
 			maze::DepthFirstSearchGenerator maze_factory(height, width, seed);
 			maze = maze_factory.make_maze();
-
 		}
 		else if(generating_kruskal)
 		{
 			std::cout << "Generating maze with kruskal.\n";
 			std::cout << "Height: " << height << ". \n";
 			std::cout << "Width: " << width << ". \n";
+			std::cout << "Seed: " << seed << ". \n";
+
+			maze::KruskalGenerator maze_factory(height, width, seed);
+			maze = maze_factory.make_maze();
 		}
 		else if(loading_binary)
 		{
@@ -274,6 +300,8 @@ int main(int argc, char * argv[])
 			maze::BinaryLoad maze_factory(load_path);
 			maze = maze_factory.make_maze();
 		}
+
+		
 
 		if(solving_depth_first)
 		{
@@ -319,7 +347,10 @@ int main(int argc, char * argv[])
 void argument_error(std::string program_name)
 {
 	std::cout << "Incorrect use of arguments. Please use:\n";
-	std::cout << program_name << " <[-g seed height width] OR ";
-	std::cout << "[--lb filename.maze]> ";
-	std::cout << "<[--sb filename.maze] OR [--sv filename.svg]>\n";
+	std::cout << program_name << "    <[--gr seed height width] OR \n";
+	std::cout << "              [--gk seed height width] OR \n";
+	std::cout << "              [--lb filename.maze]> \n";
+	std::cout << "          <[--sb filename.maze] OR \n";
+	std::cout << "              [--sv filename.svg]>\n";
+	std::cout << "          <optional: --pd>\n";
 }

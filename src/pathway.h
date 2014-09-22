@@ -23,6 +23,7 @@ namespace maze
 			void set_solved_pathway() { in_solved_pathway = true; };
 			maze::Cell * get_first_cell() { return cell1; };
 			maze::Cell * get_second_cell() { return cell2; };
+			~Pathway() {};
 
 			
 	};
