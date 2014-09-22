@@ -16,9 +16,14 @@ The reason I had implemented the program in this way is because specifying the
 number of cells as the width and height would result in bad aesthetics, and
 possible loss of functionality for larger mazes.
 
-The generator is a depth-first search with backtracking. 
+The maze factories available are:
+* Depth-first search with backtracking (see https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker).
+* Random Kruskal (see https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal.27s_algorithm). 
 
-A class diagram can be found in design.svg
+You can also use the following solving strategies to change the pathway colour in SVG output:
+* Depth first search 
+
+A class diagram can be found in design.svg.
 
 
 
@@ -35,11 +40,11 @@ To remove the compiled files, simply call
 
 #### Flags
 ###### --gr seed height width
-Recursive backtrack maze generation (see https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker).
+Recursive backtrack maze generation.
 All arguments must be unsigned integers (or strings represented as).
 
 ###### --gk seed height width
-Randomised Kruskal maze generation (see https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal.27s_algorithm).
+Randomised Kruskal maze generation.
 All arguments must be unsigned integers (or strings represented as).
 
 ###### --lb binary_file
