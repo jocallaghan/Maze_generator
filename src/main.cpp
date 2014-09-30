@@ -281,7 +281,10 @@ int main(int argc, char * argv[])
 			std::cout << "Seed: " << seed << ". \n";
 
 			maze::DepthFirstSearchGenerator maze_factory(height, width, seed);
+
+            timer.milliseconds_since();
 			maze = maze_factory.make_maze();
+            std::cout << "Generation time: " << timer.milliseconds_since() << " milliseconds. \n";
 		}
 		else if(generating_kruskal)
 		{
@@ -291,7 +294,10 @@ int main(int argc, char * argv[])
 			std::cout << "Seed: " << seed << ". \n";
 
 			maze::KruskalGenerator maze_factory(height, width, seed);
+
+            timer.milliseconds_since();
 			maze = maze_factory.make_maze();
+            std::cout << "Generation time: " << timer.milliseconds_since() << " milliseconds. \n";
 		}
 		else if(loading_binary)
 		{
@@ -308,7 +314,10 @@ int main(int argc, char * argv[])
 			std::cout << "Solving maze with depth first search.\n";
 
 			maze::DepthFirstSearchSolver depth_first_search_solver(*maze.get());
+
+            timer.milliseconds_since();
 			depth_first_search_solver.solve_maze();
+            std::cout << "Solve time: " << timer.milliseconds_since() << " milliseconds. \n";
 		}
 		else if(solving_breadth_first)
 		{
@@ -335,7 +344,7 @@ int main(int argc, char * argv[])
 			persisit_strategy.persist_maze();
 		}
 
-		std::cout << "Total time: " << timer.milliseconds_since() << " milliseconds. \n";
+		
 	}
 	catch (std::runtime_error e)
 	{
