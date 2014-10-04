@@ -13,6 +13,7 @@
 #include "kruskalgenerator.h"
 #include "binaryload.h"
 #include "depthfirstsearchsolver.h"
+#include "breadthfirstsearchsolver.h"
 #include "binarysave.h"
 #include "svgsave.h"
 #include "time.h"
@@ -322,6 +323,14 @@ int main(int argc, char * argv[])
 		else if(solving_breadth_first)
 		{
 			std::cout << "Solving maze with breadth first search.\n";
+
+            maze::BreadthFirstSearchSolver breadth_first_search_solver(*maze.get());
+
+            timer.milliseconds_since();
+            breadth_first_search_solver.solve_maze();
+            std::cout << "Solve time: " << timer.milliseconds_since() << " milliseconds. \n";
+
+            
 		}
 		else if(solving_a_star)
 		{
@@ -361,5 +370,5 @@ void argument_error(std::string program_name)
 	std::cout << "              [--lb filename.maze]> \n";
 	std::cout << "          <[--sb filename.maze] OR \n";
 	std::cout << "              [--sv filename.svg]>\n";
-	std::cout << "          <optional: --pd>\n";
+	std::cout << "          <optional: [--pd] OR [--pb]>\n";
 }

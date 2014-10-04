@@ -17,11 +17,12 @@ number of cells as the width and height would result in bad aesthetics, and
 possible loss of functionality for larger mazes.
 
 The maze factories available are:
-* Depth-first search with backtracking (see https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker).
-* Random Kruskal (see https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal.27s_algorithm). 
+* Depth-first search with backtracking.
+* Random Kruskal. 
 
 You can also use the following solving strategies to change the pathway colour in SVG output:
 * Depth first search 
+* Breadth first search
 
 A class diagram can be found in design.svg.
 
@@ -51,7 +52,11 @@ All arguments must be unsigned integers (or strings represented as).
 Load a binary file that represents a maze.
 
 ###### --pd
-Solve maze using a depth-first search strategy. 
+Solve maze using a depth first search strategy. 
+Won't affect binary output, will change color of paths in SVG output.
+
+###### --pb
+Solve maze using a breadth first search strategy. 
 Won't affect binary output, will change color of paths in SVG output.
 
 ###### --sb binary_file
@@ -77,7 +82,11 @@ You must use one input and one output type. Using a solving strategy is optional
 
 
 #### TODO
-Add more solving strategies.
+- A* solving strategy.
+
+- Code/commenting clean-up
+- Pull redundant code in factories/strategies into their abstract parents.
+- Optimise hash maps so they know their esimated size on initialisation. 
 
 
 

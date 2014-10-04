@@ -2,6 +2,7 @@
 
 #include "pathway.h"
 #include <vector>
+#include <functional>
 
 namespace maze
 {
@@ -24,3 +25,19 @@ namespace maze
 			bool has_pathway() { return !pathways.empty(); };
 	};
 }
+
+/* Adapted from examples by Nijansen on Stack Overflow http://stackoverflow.com/a/18098536 (accessed 9/9/14) 
+   and by Ken Bloom http://stackoverflow.com/a/2634715 (accessed 9/9/14) */
+
+namespace std
+{
+	template <>
+	struct hash< maze::Cell * >
+	{
+		std::size_t operator()(maze::Cell * const & cell) const noexcept
+		{
+			return std::hash<std::size_t>()((std::size_t)cell);
+		}
+	};
+}
+

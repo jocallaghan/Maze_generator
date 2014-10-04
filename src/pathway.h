@@ -4,7 +4,7 @@
 #include <vector>
 #include <functional>
 
-#define PRIME_NUM 3119
+
 
 namespace maze
 {
@@ -23,13 +23,12 @@ namespace maze
 			void set_solved_pathway() { in_solved_pathway = true; };
 			maze::Cell * get_first_cell() { return cell1; };
 			maze::Cell * get_second_cell() { return cell2; };
+			maze::Cell * get_other_cell(maze::Cell * cell);
 			~Pathway() {};
 
 			
 	};
-
 }
-
 
 /* Adapted from examples by Nijansen on Stack Overflow http://stackoverflow.com/a/18098536 (accessed 9/9/14) 
    and by Ken Bloom http://stackoverflow.com/a/2634715 (accessed 9/9/14) */
@@ -41,19 +40,7 @@ namespace std
 	{
 		std::size_t operator()(maze::Pathway * const & pathway) const noexcept
 		{
-			return (
-			(PRIME_NUM + std::hash<std::size_t>()((std::size_t)pathway))
-			* PRIME_NUM + std::hash<std::size_t>()((std::size_t)pathway)
-			);
+			return std::hash<std::size_t>()((std::size_t)pathway);
 		}
 	};
-
-	/*template <>
-	struct equal_to< maze::Pathway *>
-	{
-		bool operator()(const maze::Pathway & first, const maze::Pathway & second)
-		{
-			return first == second;
-		}
-	};*/
 }
