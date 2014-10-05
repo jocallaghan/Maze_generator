@@ -28,6 +28,7 @@ void maze::BreadthFirstSearchSolver::solve_maze()
     maze::Cell * last_cell = maze->get_cell(maze->get_width() - 1, maze->get_height() - 1);
 
     maze::Cell * current_cell = nullptr;
+    maze::Cell * neighbouring_cell = nullptr;
 
     /* Start by pushing the first cell to the queue */
     cells_to_expand.push(first_cell);
@@ -41,7 +42,7 @@ void maze::BreadthFirstSearchSolver::solve_maze()
         if(current_cell == last_cell)
         {
             /* We have reached the last cell, build the solved pathway and stop the search */
-            build_solved_pathway(&path_map, first_cell, last_cell);
+            maze::SolvingStrategy::build_solved_pathway(&path_map, first_cell, last_cell);
             break;
         }
         else
@@ -49,12 +50,9 @@ void maze::BreadthFirstSearchSolver::solve_maze()
             /* Find unvisited neighbouring cells and add to expand queue and visited set */
             for(maze::Pathway * pathway : *(current_cell->get_pathways()))
             {
-                maze::Cell * neighbouring_cell = pathway->get_other_cell(current_cell);
+                neighbouring_cell = pathway->get_other_cell(current_cell);
 
-                std::unordered_set<maze::Cell *>::const_iterator found_in_visited_set =
-                    visited_cells.find(neighbouring_cell);
-
-                if(found_in_visited_set == visited_cells.end())
+                if(!josh::is_in_container(visited_cells, neighbouring_cell))
                 {
                     /* Not yet visited - add to queue, visited cells and pathway map */
                     cells_to_expand.push(neighbouring_cell);
@@ -66,20 +64,4 @@ void maze::BreadthFirstSearchSolver::solve_maze()
         }
     }
 
-}
-
-/* Builds the solved pathway. Marks all the pathways in the solved pathway. It does this by 
-starting at the given last_cell and then finds the cell with a pathway to it using the path_map.
-It does this with the cells it finds until we reach the first_cell */
-void maze::BreadthFirstSearchSolver::build_solved_pathway(std::unordered_map<maze::Cell *, maze::Pathway *, std::hash<maze::Cell *> > * path_map, 
-    maze::Cell * first_cell, maze::Cell * last_cell)
-{
-    maze::Cell * current_cell = last_cell;
-
-    while(current_cell != first_cell)
-    {
-        maze::Pathway * current_pathway = (*path_map)[current_cell];
-        current_pathway->set_solved_pathway();
-        current_cell = current_pathway->get_other_cell(current_cell);
-    }
 }

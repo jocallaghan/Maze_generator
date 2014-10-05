@@ -3,6 +3,7 @@
 
 #include "maze.h"
 #include "solvingstrategy.h"
+#include "helper.h"
 #include <stdexcept>
 #include <string>
 #include <unordered_set>
@@ -12,7 +13,7 @@
 
 namespace maze
 {
-	class BreadthFirstSearchSolver : SolvingStrategy
+	class BreadthFirstSearchSolver : public SolvingStrategy
     {
         maze::Maze * maze;
 
@@ -20,9 +21,5 @@ namespace maze
             void solve_maze() override;
             BreadthFirstSearchSolver(maze::Maze & maze);
             ~BreadthFirstSearchSolver() {};
-
-        private:
-            void build_solved_pathway(std::unordered_map<maze::Cell *, maze::Pathway *, std::hash<maze::Cell *> > * path_map, 
-                maze::Cell * first_cell, maze::Cell * last_cell);
     };
 }

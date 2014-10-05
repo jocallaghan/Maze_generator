@@ -14,6 +14,7 @@
 #include "binaryload.h"
 #include "depthfirstsearchsolver.h"
 #include "breadthfirstsearchsolver.h"
+#include "astarsolver.h"
 #include "binarysave.h"
 #include "svgsave.h"
 #include "time.h"
@@ -335,6 +336,12 @@ int main(int argc, char * argv[])
 		else if(solving_a_star)
 		{
 			std::cout << "Solving maze with A* search.\n";
+
+            maze::AStarSolver a_star_search_solver(*maze.get());
+
+            timer.milliseconds_since();
+            a_star_search_solver.solve_maze();
+            std::cout << "Solve time: " << timer.milliseconds_since() << " milliseconds. \n";
 		}
 
 
@@ -370,5 +377,5 @@ void argument_error(std::string program_name)
 	std::cout << "              [--lb filename.maze]> \n";
 	std::cout << "          <[--sb filename.maze] OR \n";
 	std::cout << "              [--sv filename.svg]>\n";
-	std::cout << "          <optional: [--pd] OR [--pb]>\n";
+	std::cout << "          <optional: [--pd] OR [--pb] OR [--pa]>\n";
 }

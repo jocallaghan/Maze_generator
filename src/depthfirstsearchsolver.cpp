@@ -38,53 +38,28 @@ void maze::DepthFirstSearchSolver::solve_maze()
         if(current_cell == nullptr)
             throw maze::CannotSolveMaze("could not reach last cell");
 
-        /*std::cerr << "\n=====\ncurrent cell: x: " << current_cell->get_x_position()
-            << ", y: " << current_cell->get_y_position() << "\n";*/
-
         /* Get next unvisited pathway */
         for(maze::Pathway * pathway_ptr : *current_cell->get_pathways())
         {
             found_pathway = false;
-
-            /*if(pathway_ptr == nullptr)
-                std::cerr << "NULL\n";
-            else
-            {
-                std::cerr << "found pathway: ";
-                std::cerr << "x1: " << pathway_ptr->get_first_cell()->get_x_position() 
-                    << ", y1: " << pathway_ptr->get_first_cell()->get_y_position()
-                    << ", x2: " << pathway_ptr->get_second_cell()->get_x_position() 
-                    << ", y2: " << pathway_ptr->get_second_cell()->get_y_position() << "\n";
-            }*/
-
 
             std::unordered_set<maze::Pathway *>::const_iterator found_in_pathway_set =
                 pathway_set.find(pathway_ptr);
 
             if(found_in_pathway_set == pathway_set.end())
             {
-                /*std::cerr << "NOT IN VISTED SET - adding\n";*/
 
                 /* not in pathways, add and push */
                 pathway_set.insert(pathway_ptr);
                 pathway_stack.push(pathway_ptr);
 
                 /* add adjacent cell to cell stack */
-                if(pathway_ptr->get_first_cell() != current_cell)
-                    cell_stack.push(pathway_ptr->get_first_cell());
-                else if(pathway_ptr->get_second_cell() != current_cell)
-                    cell_stack.push(pathway_ptr->get_second_cell());
-                else
-                    throw maze::CannotSolveMaze("error with edge");
+                cell_stack.push(pathway_ptr->get_other_cell(current_cell));
 
                 found_pathway = true;
 
                 break;
             }
-            /*else
-            {
-                std::cerr << "in visited set - ignoring\n";
-            }*/
         }
 
         if(!found_pathway)
