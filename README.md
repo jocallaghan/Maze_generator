@@ -23,6 +23,7 @@ The maze factories available are:
 You can also use the following solving strategies to change the pathway colour in SVG output:
 * Depth first search 
 * Breadth first search
+* A* search
 
 A class diagram can be found in design.svg.
 
@@ -53,11 +54,15 @@ Load a binary file that represents a maze.
 
 ###### --pd
 Solve maze using a depth first search strategy. 
-Won't affect binary output, will change color of paths in SVG output.
+Won't affect binary output, will change colour of paths in SVG output.
 
 ###### --pb
 Solve maze using a breadth first search strategy. 
-Won't affect binary output, will change color of paths in SVG output.
+Won't affect binary output, will change colour of paths in SVG output.
+
+###### --pa
+Solve maze using a A* search strategy. 
+Won't affect binary output, will change colour of paths in SVG output.
 
 ###### --sb binary_file
 Saves a maze to a binary file
@@ -74,7 +79,7 @@ Saves a maze to a SVG
 ./maze --lb binary_file.maze --pd --sv output.svg   (binary file to SVG with depth first solve)
 
 
-You may use the argument flags in any order, but make sure you keep their own args 
+You may use the argument flags in any order, but make sure you keep their own arguments
 in order (-g seed height width). Using the same flag more than once will result
 in the program using the last one.
 
@@ -82,15 +87,10 @@ You must use one input and one output type. Using a solving strategy is optional
 
 
 #### TODO
-- A* solving strategy.
-
+- Optimise A*.
 - Code/commenting clean-up
 - Pull redundant code in factories/strategies into their abstract parents.
 - Optimise hash maps so they know their esimated size on initialisation. 
 - replace set find with count
-
-
-
-
-##### FIXES NEEDED
-* Validate binary files
+- Validate binary files
+- replace naked heap allocations with smart pointers.
