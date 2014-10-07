@@ -4,6 +4,8 @@
 #include "pathway.h"
 #include <vector>
 
+#define NUMBER_WALLS_PER_CELL 4
+
 namespace maze
 {
 	
@@ -26,6 +28,8 @@ namespace maze
 			void add_pathway(maze::Pathway * pathway);
 			std::vector<maze::Pathway *> * get_pathways() { return &pathways; };
 			std::vector<std::vector<maze::Cell *>> * get_cells() { return &cells; };
+			unsigned long max_num_pathways() { return (unsigned long)height * width * NUMBER_WALLS_PER_CELL; };
+			unsigned long num_cells() { return (unsigned long)height * width; };
 
 	};
 }

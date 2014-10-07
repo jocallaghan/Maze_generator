@@ -88,6 +88,9 @@ namespace maze
  		}
  		binaryFile.close();
 
+		if (readEdges < numEdges)
+			throw maze::CannotGenerateMaze("Missing edges");
+
  		return maze;
 	}
 }

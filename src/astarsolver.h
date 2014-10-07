@@ -25,7 +25,7 @@ namespace maze
             ~AStarSolver() {};
 
         private:
-            unsigned heuristic_estimate(maze::Cell & cell, maze::Maze & maze);
+            unsigned heuristic_estimate(maze::Cell & cell);
     };
 
     typedef struct Priority_and_cell

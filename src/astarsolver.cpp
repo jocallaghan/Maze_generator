@@ -1,9 +1,10 @@
 #include "astarsolver.h"
 #include <iostream>
 
+
 maze::AStarSolver::AStarSolver(maze::Maze & maze)
 {
-   this->maze = &maze;
+	this->maze = &maze;
 }
 
 
@@ -29,6 +30,14 @@ void maze::AStarSolver::solve_maze()
 
     std::unordered_map<maze::Cell *, unsigned, std::hash<Cell *> > estimated_heuristic;
 
+	/* Optimise hash maps */
+	unsigned long max_number_pathways = maze->max_num_pathways();
+	unsigned long num_cells = maze->num_cells();
+	path_map.reserve(max_number_pathways);
+	best_known_pathway_number.reserve(num_cells);
+	estimated_heuristic.reserve(num_cells);
+
+
 
 
     maze::Cell * first_cell = maze->get_cell(0, 0);
@@ -39,7 +48,7 @@ void maze::AStarSolver::solve_maze()
 
     /* Start by pushing the first cell */
     best_known_pathway_number[first_cell] = 0;
-    estimated_heuristic[first_cell] = heuristic_estimate(*first_cell, *maze);
+    estimated_heuristic[first_cell] = heuristic_estimate(*first_cell);
     open_cell_p_queue.push(Priority_and_cell(first_cell, estimated_heuristic[first_cell]));
     open_cell_set.insert(first_cell);
 
@@ -83,7 +92,7 @@ void maze::AStarSolver::solve_maze()
             {
                 path_map[neighbour_cell] = pathway;
                 best_known_pathway_number[neighbour_cell] = tentative_number_pathways;
-                estimated_heuristic[neighbour_cell] = best_known_pathway_number[current_cell] + heuristic_estimate(*neighbour_cell, *maze);
+                estimated_heuristic[neighbour_cell] = best_known_pathway_number[current_cell] + heuristic_estimate(*neighbour_cell);
 
                 if(neighbour_not_in_open_set)
                 {
@@ -104,8 +113,8 @@ void maze::AStarSolver::solve_maze()
 
 }
 
-unsigned maze::AStarSolver::heuristic_estimate(maze::Cell & cell, maze::Maze & maze)
+unsigned maze::AStarSolver::heuristic_estimate(maze::Cell & cell)
 {
-    return maze.get_width() - cell.get_x_position() - 1 +
-        maze.get_height() - cell.get_y_position() - 1;
+    return maze->get_width() - cell.get_x_position() - 1 +
+        maze->get_height() - cell.get_y_position() - 1;
 }
