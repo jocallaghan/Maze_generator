@@ -76,7 +76,7 @@ void maze::AStarSolver::solve_maze()
             std::unordered_set<maze::Cell *>::const_iterator found_in_closed_set =
                 closed_cell_set.find(neighbour_cell);
 
-            if(josh::is_in_container(closed_cell_set, neighbour_cell))
+            if(extra::is_in_container(closed_cell_set, neighbour_cell))
             {
                 /* We have already closed this cell; skip to next neighbour */
                 continue;
@@ -84,9 +84,9 @@ void maze::AStarSolver::solve_maze()
 
             unsigned tentative_number_pathways = best_known_pathway_number[current_cell] + DISTANCE_BETWEEN_ADJ_CELLS;
 
-            bool neighbour_not_in_open_set = !josh::is_in_container(open_cell_set, neighbour_cell);
+            bool neighbour_not_in_open_set = !extra::is_in_container(open_cell_set, neighbour_cell);
 
-            bool known_pathway_exists = josh::is_in_container(best_known_pathway_number, neighbour_cell);
+            bool known_pathway_exists = extra::is_in_container(best_known_pathway_number, neighbour_cell);
 
             if(neighbour_not_in_open_set || (known_pathway_exists && tentative_number_pathways < best_known_pathway_number[neighbour_cell]))
             {

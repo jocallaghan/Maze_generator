@@ -9,7 +9,6 @@
 #include <unordered_set>
 #include <queue>
 #include <functional>
-#include "helper.h"
 
 #define DISTANCE_BETWEEN_ADJ_CELLS 1
 

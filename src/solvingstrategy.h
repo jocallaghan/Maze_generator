@@ -2,6 +2,7 @@
 
 
 #include "maze.h"
+#include "extra.h"
 #include <stdexcept>
 #include <string>
 #include <unordered_map>

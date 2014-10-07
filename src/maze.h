@@ -6,6 +6,8 @@
 
 #define NUMBER_WALLS_PER_CELL 4
 
+
+
 namespace maze
 {
 	
@@ -30,6 +32,9 @@ namespace maze
 			std::vector<std::vector<maze::Cell *>> * get_cells() { return &cells; };
 			unsigned long max_num_pathways() { return (unsigned long)height * width * NUMBER_WALLS_PER_CELL; };
 			unsigned long num_cells() { return (unsigned long)height * width; };
+			maze::Cell * get_entry_cell() { return get_cell(0, 0); } /* Entry at 0,0 */
+			maze::Cell * get_exit_cell() { return get_cell(width - 1, height - 1); } /* Exit at last indexes */
+
 
 	};
 }

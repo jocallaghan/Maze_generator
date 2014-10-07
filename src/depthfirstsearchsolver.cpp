@@ -24,8 +24,8 @@ void maze::DepthFirstSearchSolver::solve_maze()
     bool found_pathway;
 
 
-    maze::Cell * first_cell = maze->get_cell(0, 0);
-    maze::Cell * last_cell = maze->get_cell(maze->get_width() - 1, maze->get_height() - 1);
+	maze::Cell * first_cell = maze->get_entry_cell();
+	maze::Cell * last_cell = maze->get_exit_cell();
 
     if(first_cell == nullptr || last_cell == nullptr)
         throw maze::CannotSolveMaze("not initialised");
@@ -43,10 +43,7 @@ void maze::DepthFirstSearchSolver::solve_maze()
         {
             found_pathway = false;
 
-            std::unordered_set<maze::Pathway *>::const_iterator found_in_pathway_set =
-                pathway_set.find(pathway_ptr);
-
-            if(found_in_pathway_set == pathway_set.end())
+			if (!extra::is_in_container(pathway_set, pathway_ptr))
             {
 
                 /* not in pathways, add and push */
