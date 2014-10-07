@@ -1,5 +1,4 @@
 #include "binaryload.h"
-#include <iostream>
 #include <string>
 
 namespace maze
@@ -33,9 +32,6 @@ namespace maze
  		{
  			throw maze::CannotGenerateMaze("Height cannot be less than 1");
  		}
-
- 		/*std::cout << "Width: " << width << ", height: " << height << ", numEdges: ";
- 		std::cout << numEdges << "\n";*/
 
 		/* Initialize maze object */
 		std::shared_ptr<maze::Maze> maze(new Maze(height, width));

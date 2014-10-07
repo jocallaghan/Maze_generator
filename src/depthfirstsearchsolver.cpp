@@ -1,5 +1,4 @@
 #include "depthfirstsearchsolver.h"
-#include <iostream>
 
 maze::DepthFirstSearchSolver::DepthFirstSearchSolver(maze::Maze & maze)
 {

@@ -1,5 +1,4 @@
 #include "breadthfirstsearchsolver.h"
-#include <iostream>
 
 maze::BreadthFirstSearchSolver::BreadthFirstSearchSolver(maze::Maze & maze)
 {
@@ -21,6 +20,9 @@ void maze::BreadthFirstSearchSolver::solve_maze()
     /* Map cell to pathway - used when we need to get correct pathways */
     std::unordered_map<maze::Cell *, maze::Pathway *, std::hash<Cell *> > path_map; 
 
+	/* Optimise hash map */
+	path_map.reserve(maze->max_num_pathways());
+
     /* Cells added by breath first to expand */
     std::queue<maze::Cell *> cells_to_expand;
 
@@ -29,6 +31,8 @@ void maze::BreadthFirstSearchSolver::solve_maze()
 
     maze::Cell * current_cell = nullptr;
     maze::Cell * neighbouring_cell = nullptr;
+
+
 
     /* Start by pushing the first cell to the queue */
     cells_to_expand.push(first_cell);

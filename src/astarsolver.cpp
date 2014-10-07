@@ -1,5 +1,4 @@
 #include "astarsolver.h"
-#include <iostream>
 
 
 maze::AStarSolver::AStarSolver(maze::Maze & maze)

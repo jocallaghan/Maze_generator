@@ -3,7 +3,6 @@
 
 #include "maze.h"
 #include "solvingstrategy.h"
-#include "helper.h"
 #include <stdexcept>
 #include <string>
 #include <unordered_set>

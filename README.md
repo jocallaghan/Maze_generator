@@ -89,6 +89,6 @@ You must use one input and one output type. Using a solving strategy is optional
 #### TODO
 - Code/commenting clean-up
 - Pull redundant code in factories/strategies into their abstract parents.
-- Optimise hash maps so they know their esimated size on initialisation. 
+- - Pathway rebuild.
 - replace naked heap allocations with smart pointers.
 - remove debug code
