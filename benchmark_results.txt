@@ -328,3 +328,373 @@ Save time: 4557 milliseconds.
 <<< Error here, restarted without the generation >>>
 
 
+========= Doing depth first solve on recursive =========
+++++ Run 0 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2803 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 113386 milliseconds. 
+++++ Run 1 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2861 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116511 milliseconds. 
+++++ Run 2 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 3067 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 117797 milliseconds. 
+++++ Run 3 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2891 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 118458 milliseconds. 
+++++ Run 4 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2870 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116130 milliseconds. 
+++++ Run 5 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2865 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 112840 milliseconds. 
+++++ Run 6 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2906 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 111281 milliseconds. 
+++++ Run 7 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2580 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 120805 milliseconds. 
+++++ Run 8 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2971 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 113568 milliseconds. 
+++++ Run 9 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with depth first search.
+Solve time: 2795 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 114090 milliseconds. 
+
+<<< Stopped here and rerrun excluding above >>>
+
+
+========= Doing breadth first solve on recursive =========
+++++ Run 0 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 3780 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116543 milliseconds. 
+++++ Run 1 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 3764 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 115979 milliseconds. 
+++++ Run 2 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 5456 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116542 milliseconds. 
+++++ Run 3 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 3769 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 119814 milliseconds. 
+++++ Run 4 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 4118 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116582 milliseconds. 
+++++ Run 5 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 3812 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116411 milliseconds. 
+++++ Run 6 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 3797 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116696 milliseconds. 
+++++ Run 7 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 3796 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116227 milliseconds. 
+++++ Run 8 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 4782 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116034 milliseconds. 
+++++ Run 9 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with breadth first search.
+Solve time: 3791 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116670 milliseconds. 
+========= Doing A star solve on recursive =========
+++++ Run 0 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14052 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 115795 milliseconds. 
+++++ Run 1 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14043 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 117002 milliseconds. 
+++++ Run 2 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14126 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 113365 milliseconds. 
+++++ Run 3 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14101 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 114905 milliseconds. 
+++++ Run 4 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14910 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 117368 milliseconds. 
+++++ Run 5 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14023 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 117021 milliseconds. 
+++++ Run 6 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14065 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 121285 milliseconds. 
+++++ Run 7 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14129 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 114546 milliseconds. 
+++++ Run 8 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 14432 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 116939 milliseconds. 
+++++ Run 9 ++++
+Loading maze binary from: recursive.maze. 
+Solving maze with A* search.
+Solve time: 16849 milliseconds. 
+Saving maze to SVG: recursive_solved.svg. 
+Save time: 117087 milliseconds. 
+========= Doing depth first solve on kruskal =========
+++++ Run 0 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 3074 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 116167 milliseconds. 
+++++ Run 1 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2286 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 116149 milliseconds. 
+++++ Run 2 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2298 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 118010 milliseconds. 
+++++ Run 3 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2287 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 122038 milliseconds. 
+++++ Run 4 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2292 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 121379 milliseconds. 
+++++ Run 5 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2305 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 119194 milliseconds. 
+++++ Run 6 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2295 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115446 milliseconds. 
+++++ Run 7 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2964 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115665 milliseconds. 
+++++ Run 8 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2732 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 117393 milliseconds. 
+++++ Run 9 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with depth first search.
+Solve time: 2273 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 116782 milliseconds. 
+========= Doing breadth first solve on kruskal =========
+++++ Run 0 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 5330 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 116146 milliseconds. 
+++++ Run 1 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 6104 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 117695 milliseconds. 
+++++ Run 2 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 5321 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 117140 milliseconds. 
+++++ Run 3 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 6565 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115957 milliseconds. 
+++++ Run 4 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 5319 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 114934 milliseconds. 
+++++ Run 5 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 5405 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 117303 milliseconds. 
+++++ Run 6 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 6413 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 116266 milliseconds. 
+++++ Run 7 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 5309 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 120215 milliseconds. 
+++++ Run 8 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 5355 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 118686 milliseconds. 
+++++ Run 9 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with breadth first search.
+Solve time: 6417 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115274 milliseconds. 
+========= Doing A star solve on kruskal =========
+++++ Run 0 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 8090 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115856 milliseconds. 
+++++ Run 1 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 6777 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 114620 milliseconds. 
+++++ Run 2 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 6701 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115714 milliseconds. 
+++++ Run 3 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 6813 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 116196 milliseconds. 
+++++ Run 4 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 7691 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 116320 milliseconds. 
+++++ Run 5 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 6684 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115513 milliseconds. 
+++++ Run 6 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 6745 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115238 milliseconds. 
+++++ Run 7 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 6725 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115529 milliseconds. 
+++++ Run 8 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 6755 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 115062 milliseconds. 
+++++ Run 9 ++++
+Loading maze binary from: kruskal.maze. 
+Solving maze with A* search.
+Solve time: 7512 milliseconds. 
+Saving maze to SVG: kruskal_solved.svg. 
+Save time: 114969 milliseconds. 
