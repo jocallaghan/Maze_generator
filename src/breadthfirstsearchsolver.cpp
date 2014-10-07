@@ -56,7 +56,7 @@ void maze::BreadthFirstSearchSolver::solve_maze()
             {
                 neighbouring_cell = pathway->get_other_cell(current_cell);
 
-                if(!extra::is_in_container(visited_cells, neighbouring_cell))
+                if(visited_cells.find(neighbouring_cell) == visited_cells.end())
                 {
                     /* Not yet visited - add to queue, visited cells and pathway map */
                     cells_to_expand.push(neighbouring_cell);

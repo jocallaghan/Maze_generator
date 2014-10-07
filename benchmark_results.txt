@@ -1,0 +1,330 @@
+========= Doing recursive svg =========
+++++ Run 0 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8195 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 122056 milliseconds. 
+++++ Run 1 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8187 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 123541 milliseconds. 
+++++ Run 2 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8641 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 123991 milliseconds. 
+++++ Run 3 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8384 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 122999 milliseconds. 
+++++ Run 4 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8459 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 123984 milliseconds. 
+++++ Run 5 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8684 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 125557 milliseconds. 
+++++ Run 6 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8803 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 128831 milliseconds. 
+++++ Run 7 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8702 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 126294 milliseconds. 
+++++ Run 8 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8700 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 129674 milliseconds. 
+++++ Run 9 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8239 milliseconds. 
+Saving maze to SVG: recursive.svg. 
+Save time: 122846 milliseconds. 
+========= Doing recursive bin =========
+++++ Run 0 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8309 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 3862 milliseconds. 
+++++ Run 1 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8590 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 3470 milliseconds. 
+++++ Run 2 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8126 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 3912 milliseconds. 
+++++ Run 3 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8150 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 3771 milliseconds. 
+++++ Run 4 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8246 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 3686 milliseconds. 
+++++ Run 5 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8354 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 4189 milliseconds. 
+++++ Run 6 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 9167 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 3680 milliseconds. 
+++++ Run 7 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8216 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 3864 milliseconds. 
+++++ Run 8 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8337 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 4081 milliseconds. 
+++++ Run 9 ++++
+Generating maze with recursive.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 8910 milliseconds. 
+Saving maze to binary: recursive.maze. 
+Save time: 4008 milliseconds. 
+========= Doing kruskal svg =========
+++++ Run 0 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 23835 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 126285 milliseconds. 
+++++ Run 1 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 20954 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 123581 milliseconds. 
+++++ Run 2 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 23544 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 124383 milliseconds. 
+++++ Run 3 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 22647 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 132267 milliseconds. 
+++++ Run 4 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 23994 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 123588 milliseconds. 
+++++ Run 5 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 24076 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 119942 milliseconds. 
+++++ Run 6 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 24282 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 119359 milliseconds. 
+++++ Run 7 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 24139 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 120997 milliseconds. 
+++++ Run 8 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 23208 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 117102 milliseconds. 
+++++ Run 9 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 23373 milliseconds. 
+Saving maze to SVG: kruskal.svg. 
+Save time: 127656 milliseconds. 
+========= Doing kruskal bin =========
+++++ Run 0 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 22642 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4466 milliseconds. 
+++++ Run 1 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 22894 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4193 milliseconds. 
+++++ Run 2 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 33902 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4660 milliseconds. 
+++++ Run 3 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 32383 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4458 milliseconds. 
+++++ Run 4 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 22578 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4782 milliseconds. 
+++++ Run 5 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 23152 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4632 milliseconds. 
+++++ Run 6 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 23180 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4709 milliseconds. 
+++++ Run 7 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 22489 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4643 milliseconds. 
+++++ Run 8 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 23237 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4343 milliseconds. 
+++++ Run 9 ++++
+Generating maze with kruskal.
+Height: 2000. 
+Width: 2000. 
+Seed: 0. 
+Generation time: 22345 milliseconds. 
+Saving maze to binary: kruskal.maze. 
+Save time: 4557 milliseconds. 
+========= Doing depth first solve on recursive =========
+++++ Run 0 ++++
+
+<<< Error here, restarted without the generation >>>
+
+

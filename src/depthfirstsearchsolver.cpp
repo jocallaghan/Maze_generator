@@ -42,9 +42,8 @@ void maze::DepthFirstSearchSolver::solve_maze()
         {
             found_pathway = false;
 
-			if (!extra::is_in_container(pathway_set, pathway_ptr))
+            if(pathway_set.find(pathway_ptr) == pathway_set.end())
             {
-
                 /* not in pathways, add and push */
                 pathway_set.insert(pathway_ptr);
                 pathway_stack.push(pathway_ptr);
