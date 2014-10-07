@@ -350,14 +350,20 @@ int main(int argc, char * argv[])
 			std::cout << "Saving maze to binary: " << save_path << ". \n";
 
 			maze::BinarySave persisit_strategy(maze,save_path);
+			
+			timer.milliseconds_since();
 			persisit_strategy.persist_maze();
+			std::cout << "Save time: " << timer.milliseconds_since() << " milliseconds. \n";
 		}
 		else if(saving_svg)
 		{
 			std::cout << "Saving maze to SVG: " << save_path << ". \n";
 
 			maze::SVGSave persisit_strategy(maze,save_path);
+
+			timer.milliseconds_since();
 			persisit_strategy.persist_maze();
+			std::cout << "Save time: " << timer.milliseconds_since() << " milliseconds. \n";
 		}
 
 		
