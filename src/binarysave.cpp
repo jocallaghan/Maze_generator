@@ -32,8 +32,8 @@ namespace maze
 		output.write((char*)&number_edges, sizeof(number_edges));
 
 
-		/*std::cout << "Width: " << width << ", height: " << height << ", number_edges: ";
- 		std::cout << number_edges << "\n";*/
+		std::cout << "Width: " << width << ", height: " << height << ", number_edges: ";
+ 		std::cout << number_edges << "\n";
 
 			
 		/* Edges/pathways */

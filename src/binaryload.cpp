@@ -16,6 +16,12 @@ namespace maze
  			throw maze::CannotGenerateMaze("Could not open file");
  		}
 
+ 		/* File length */
+    	binaryFile.seekg(0, binaryFile.end);
+
+    	unsigned file_length = binaryFile.tellg();
+    	binaryFile.seekg(0, binaryFile.beg);
+
 		
 
 		/* read header info */
@@ -33,13 +39,21 @@ namespace maze
  			throw maze::CannotGenerateMaze("Height cannot be less than 1");
  		}
 
+ 		/* Check for overflow */
+ 		unsigned check = width * height;
+ 		if(check / height != width)
+ 		{
+ 			throw maze::CannotGenerateMaze("Width and/or height too large.");
+ 		}
+
+
 		/* Initialize maze object */
 		std::shared_ptr<maze::Maze> maze(new Maze(height, width));
 
 
  		unsigned long readEdges = 0;
 		/* edges */
- 		while(readEdges < numEdges && !binaryFile.eof())
+ 		while(binaryFile.tellg() != file_length)
  		{
 			unsigned x1 = 0, x2 = 0, y1 = 0, y2 = 0;
 
@@ -53,8 +67,11 @@ namespace maze
 			/* y2 */
  			binaryFile.read((char*)&y2, sizeof(y2));
 
+ 			/*std::cerr << "read edge: cell["<< y1 << "][" << x1 << "] to cell[" <<
+ 				x2 << "][" << y2 << "]\n";*/
+
  			/* Test data */
- 			std::string message;
+ 			std::string message = "";
 
  			if(x1 >= maze->get_width())
  			{
@@ -86,6 +103,11 @@ namespace maze
 
 		if (readEdges < numEdges)
 			throw maze::CannotGenerateMaze("Missing edges");
+		else if (readEdges > numEdges)
+		{
+			std::cerr << "Num edges read: " << readEdges << "\n";
+			throw maze::CannotGenerateMaze("Too many edges");
+		}
 
  		return maze;
 	}
