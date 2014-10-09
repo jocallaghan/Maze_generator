@@ -3,6 +3,8 @@
 
 namespace maze
 {
+    /* Generate a maze using a depthfirst search with recursive backtracking */
+    
 	std::shared_ptr<maze::Maze> maze::DepthFirstSearchGenerator::make_maze()
 	{
 		/*  Algorithm: https://en.wikipedia.org/wiki/
@@ -21,6 +23,9 @@ namespace maze
 
     	maze::Cell * current_cell = nullptr, * next_cell = nullptr;
 
+        /* The current pathway stack : I didn't use  SolvingStrategy::build_solved_pathway() because it is less
+        efficient to store a cell-pathway map which has to be probed and navigated compared
+        to the use of a sole pathway stack which is possible with this strategy */
     	std::stack<maze::Cell *> path_stack;
 
     	unsigned long number_of_total_cells = height * width;
@@ -28,7 +33,6 @@ namespace maze
 
     	/* Starting at top left */
     	path_stack.push(maze->get_cell(0, 0));
-
     	number_of_visited_cells++;
 
     	while(number_of_visited_cells < number_of_total_cells)

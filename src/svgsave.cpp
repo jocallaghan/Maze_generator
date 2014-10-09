@@ -1,10 +1,8 @@
 #include "svgsave.h"
 
-#include <iostream>
-
-
 namespace maze
 {
+	/* Persisit maze to a SVG file. */
 	void maze::SVGSave::persist_maze()
 	{
 		std::fstream output(file_path, std::fstream::out | std::fstream::trunc);

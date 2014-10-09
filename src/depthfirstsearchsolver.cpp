@@ -11,6 +11,7 @@ maze::DepthFirstSearchSolver::DepthFirstSearchSolver(maze::Maze & maze)
 * the maze is correct and that there is a pathway from the start cell to
 * the end cell (0,0) and (height - 1, width - 1).
 * Updates pathway objects if they are in the solved path.
+* Depth first search
 *****************************************************************************/
 void maze::DepthFirstSearchSolver::solve_maze()
 {

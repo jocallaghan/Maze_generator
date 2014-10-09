@@ -3,6 +3,7 @@
 
 namespace maze
 {
+	/* Generates a maze using a binary file */
 	std::shared_ptr<maze::Maze> maze::BinaryLoad::make_maze()
 	{
 		std::fstream binaryFile(file_path, std::fstream::in | std::fstream::binary);
@@ -21,7 +22,6 @@ namespace maze
 
     	unsigned file_length = binaryFile.tellg();
     	binaryFile.seekg(0, binaryFile.beg);
-
 		
 
 		/* read header info */

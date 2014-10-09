@@ -1,6 +1,5 @@
 #include "binarysave.h"
-
-#include <iostream>
+/*#include <iostream>*/
 
 namespace maze
 {
@@ -11,6 +10,7 @@ namespace maze
 		this->file_path = file_path;
 	}
 
+	/* Persists a maze into a binary file */
 	void maze::BinarySave::persist_maze()
 	{
 		std::fstream output(file_path,std::fstream::out | std::fstream::binary | std::fstream::trunc);
@@ -32,8 +32,8 @@ namespace maze
 		output.write((char*)&number_edges, sizeof(number_edges));
 
 
-		std::cout << "Width: " << width << ", height: " << height << ", number_edges: ";
- 		std::cout << number_edges << "\n";
+		/*std::cout << "Width: " << width << ", height: " << height << ", number_edges: ";
+ 		std::cout << number_edges << "\n";*/
 
 			
 		/* Edges/pathways */

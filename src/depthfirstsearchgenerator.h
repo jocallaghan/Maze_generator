@@ -5,7 +5,6 @@
 #include <string>
 #include <stack>
 #include <random>
-#include <iostream>
 
 namespace maze
 {

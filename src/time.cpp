@@ -5,6 +5,7 @@ maze::Time::Time()
     current_time_stamp = std::chrono::steady_clock::now();
 }
 
+/* Return the number of milliseconds since last call */
 double maze::Time::milliseconds_since()
 {
 

@@ -3,6 +3,7 @@
 #include "cell.h"
 #include "pathway.h"
 #include <vector>
+#include <stdexcept>
 
 #define NUMBER_WALLS_PER_CELL 4
 
@@ -36,5 +37,11 @@ namespace maze
 			maze::Cell * get_exit_cell() { return get_cell(width - 1, height - 1); } /* Exit at last indexes */
 
 
+	};
+
+	class MazeError : public std::runtime_error
+	{
+		public:
+			MazeError(const std::string& message) : std::runtime_error("Maze error: " + message) {};
 	};
 }

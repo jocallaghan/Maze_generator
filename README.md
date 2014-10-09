@@ -87,6 +87,5 @@ You must use one input and one output type. Using a solving strategy is optional
 
 
 #### TODO
-- Code/commenting clean-up
 - replace naked heap allocations with smart pointers.
 

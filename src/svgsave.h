@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <memory>
+#include <iostream>
 
 #define CELL_SIZE_PIXELS 20
 #define WALL_SIZE_FACTOR 0.1

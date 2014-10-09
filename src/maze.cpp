@@ -1,8 +1,8 @@
 #include "maze.h"
-#include <iostream>
 
 namespace maze
 {
+	/* Create an empty maze - allocate space for cells etc */
 	maze::Maze::Maze(unsigned height, unsigned width)
 	{
 
@@ -25,19 +25,6 @@ namespace maze
 		this->width = width;
 		this->height = height;
 
-
-		/* for(unsigned i = 0; i < height; i++)
-		{
-
-			for (unsigned j = 0; j < width; j++)
-			{
-				std::cout << "Cell [" << i << "][" << j << "] :: ";
-				std::cout << "y_position : " << cells[i][j].get_y_position();
-				std::cout << ", x_position : " << cells[i][j].get_x_position();
-				std::cout << "\n";
-			}
-		} */
-
 	}
 
 	maze::Cell * maze::Maze::get_cell(unsigned x_position, unsigned y_position)
@@ -58,23 +45,12 @@ namespace maze
 	void maze::Maze::add_pathway(maze::Cell * cell1, maze::Cell * cell2)
 	{
 		if(cell1 == nullptr || cell2 == nullptr)
-		{
-			std::cerr << "error creating path\n";
-		}
+			throw maze::MazeError("Cannot add pathway - one or both cells are null");
 
 		maze::Pathway * pathway =  new Pathway(cell1, cell2);
 		pathways.push_back(pathway);
 		cell1->add_pathway(pathways[pathways.size() - 1]);
 		cell2->add_pathway(pathways[pathways.size() - 1]);
-
-
-		/*std::cerr << "Numpathways: " << pathways.size() << "\n";
-		std::cerr << "x1: " << pathways.back()->get_first_cell()->get_x_position() 
-			<< ", y1: " << pathways.back()->get_first_cell()->get_y_position()
-			<< ", x2: " << pathways.back()->get_second_cell()->get_x_position() 
-			<< ", y2: " << pathways.back()->get_second_cell()->get_y_position() << "\n";*/
-
-
 	}
 
 	void maze::Maze::add_pathway(maze::Pathway * pathway)

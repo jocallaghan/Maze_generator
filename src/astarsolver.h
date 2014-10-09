@@ -1,9 +1,7 @@
 #pragma once
 
-
 #include "maze.h"
 #include "solvingstrategy.h"
-#include <stdexcept>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
@@ -38,7 +36,8 @@ namespace maze
 }
 
 /* specialisation of the less functor drawn from example given from Stick it to THE MAN on
-Stack Overflow (https://stackoverflow.com/q/2282349 accessed 4/10/14) */
+Stack Overflow (https://stackoverflow.com/q/2282349 accessed 4/10/14) 
+Used for the open cell priority queue */
 namespace std {
     template<>
     struct less<maze::Priority_and_cell>
