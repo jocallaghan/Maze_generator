@@ -4,9 +4,9 @@
 namespace maze
 {
 
-	maze::BinarySave::BinarySave(std::shared_ptr<maze::Maze> maze, std::string file_path)
+	maze::BinarySave::BinarySave(maze::Maze & maze, std::string file_path)
 	{
-		this->maze = maze,
+		this->maze = &maze,
 		this->file_path = file_path;
 	}
 

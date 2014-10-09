@@ -9,11 +9,11 @@ namespace maze
 {
 	class BinarySave : public PersistenceStrategy
 	{
-		std::shared_ptr<maze::Maze> maze;
+		maze::Maze * maze;
 		std::string file_path;
 
 		public:
-			BinarySave(std::shared_ptr<maze::Maze> maze, std::string file_path);
+			BinarySave(maze::Maze & maze, std::string file_path);
 			virtual void persist_maze() override;
 	};
 }

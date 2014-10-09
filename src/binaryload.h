@@ -16,6 +16,6 @@ namespace maze
 		public:
 			BinaryLoad(std::string file_path_):
 				file_path(file_path_) {};
-			virtual std::shared_ptr<maze::Maze> make_maze() override;
+			virtual std::unique_ptr<maze::Maze> make_maze() override;
 	};
 }

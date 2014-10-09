@@ -25,8 +25,8 @@ You can also use the following solving strategies to change the pathway colour i
 * Breadth first search
 * A* search
 
-A class diagram can be found in design.svg.
-
+A report discussing the differences in implemented algorithmscan be found in
+report.pdf
 
 
 ### Installation
@@ -86,6 +86,4 @@ in the program using the last one.
 You must use one input and one output type. Using a solving strategy is optional.
 
 
-#### TODO
-- replace naked heap allocations with smart pointers.
 

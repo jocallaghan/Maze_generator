@@ -49,7 +49,10 @@ int main(int argc, char * argv[])
 	bool solving_breadth_first = false;
 	bool solving_a_star = false;
 
-	std::shared_ptr<maze::Maze> maze;
+	std::unique_ptr<maze::Maze> maze;
+	std::unique_ptr<maze::MazeFactory> factory;
+	std::unique_ptr<maze::SolvingStrategy> solving_strategy;
+	std::unique_ptr<maze::PersistenceStrategy> persistence_strategy;
 	
 	std::string program_name = argv[0];
 	
@@ -60,7 +63,7 @@ int main(int argc, char * argv[])
 		std::string next_argument;
 		if(i+1 < argc) /* Making sure we have a next argument */
 		{
-			next_argument = argv[i+1];
+			next_argument = std::string(argv[i+1]);
 		}
 		else
 		{
@@ -282,11 +285,7 @@ int main(int argc, char * argv[])
 			std::cout << "Width: " << width << ". \n";
 			std::cout << "Seed: " << seed << ". \n";
 
-			maze::DepthFirstSearchGenerator maze_factory(height, width, seed);
-
-            timer.milliseconds_since();
-			maze = maze_factory.make_maze();
-            std::cout << "Generation time: " << timer.milliseconds_since() << " milliseconds. \n";
+			factory = std::unique_ptr<maze::MazeFactory>(new maze::DepthFirstSearchGenerator(height, width, seed));
 		}
 		else if(generating_kruskal)
 		{
@@ -295,82 +294,74 @@ int main(int argc, char * argv[])
 			std::cout << "Width: " << width << ". \n";
 			std::cout << "Seed: " << seed << ". \n";
 
-			maze::KruskalGenerator maze_factory(height, width, seed);
-
-            timer.milliseconds_since();
-			maze = maze_factory.make_maze();
-            std::cout << "Generation time: " << timer.milliseconds_since() << " milliseconds. \n";
+			factory = std::unique_ptr<maze::MazeFactory>(new maze::KruskalGenerator(height, width, seed));
 		}
 		else if(loading_binary)
 		{
 			std::cout << "Loading maze binary from: " << load_path << ". \n";
 
-			maze::BinaryLoad maze_factory(load_path);
-			maze = maze_factory.make_maze();
+			factory = std::unique_ptr<maze::MazeFactory>(new maze::BinaryLoad(load_path));
 		}
 
+
+		timer.milliseconds_since();
+		maze = factory->make_maze();
+        std::cout << "Generation time: " << timer.milliseconds_since() << " milliseconds. \n";
 		
 
 		if(solving_depth_first)
 		{
 			std::cout << "Solving maze with depth first search.\n";
 
-			maze::DepthFirstSearchSolver depth_first_search_solver(*maze.get());
-
-            timer.milliseconds_since();
-			depth_first_search_solver.solve_maze();
-            std::cout << "Solve time: " << timer.milliseconds_since() << " milliseconds. \n";
+			solving_strategy = std::unique_ptr<maze::SolvingStrategy>(new maze::DepthFirstSearchSolver(*maze.get()));            
 		}
 		else if(solving_breadth_first)
 		{
 			std::cout << "Solving maze with breadth first search.\n";
 
-            maze::BreadthFirstSearchSolver breadth_first_search_solver(*maze.get());
-
-            timer.milliseconds_since();
-            breadth_first_search_solver.solve_maze();
-            std::cout << "Solve time: " << timer.milliseconds_since() << " milliseconds. \n";
-
-            
+            solving_strategy = std::unique_ptr<maze::SolvingStrategy>(new maze::BreadthFirstSearchSolver(*maze.get()));            
 		}
 		else if(solving_a_star)
 		{
 			std::cout << "Solving maze with A* search.\n";
 
-            maze::AStarSolver a_star_search_solver(*maze.get());
-
-            timer.milliseconds_since();
-            a_star_search_solver.solve_maze();
-            std::cout << "Solve time: " << timer.milliseconds_since() << " milliseconds. \n";
+            solving_strategy = std::unique_ptr<maze::SolvingStrategy>(new maze::AStarSolver(*maze.get()));
 		}
+
+		bool solving_maze = solving_depth_first || solving_breadth_first || solving_a_star;
+
+		if(solving_maze)
+        {
+        	timer.milliseconds_since();
+			solving_strategy->solve_maze();
+        	std::cout << "Solve time: " << timer.milliseconds_since() << " milliseconds. \n";
+        }
 
 
 		if(saving_binary)
 		{
 			std::cout << "Saving maze to binary: " << save_path << ". \n";
 
-			maze::BinarySave persisit_strategy(maze,save_path);
-			
-			timer.milliseconds_since();
-			persisit_strategy.persist_maze();
-			std::cout << "Save time: " << timer.milliseconds_since() << " milliseconds. \n";
+			persistence_strategy = std::unique_ptr<maze::PersistenceStrategy>(new maze::BinarySave(*maze.get(),save_path));
 		}
 		else if(saving_svg)
 		{
 			std::cout << "Saving maze to SVG: " << save_path << ". \n";
 
-			maze::SVGSave persisit_strategy(maze,save_path);
-
-			timer.milliseconds_since();
-			persisit_strategy.persist_maze();
-			std::cout << "Save time: " << timer.milliseconds_since() << " milliseconds. \n";
+			persistence_strategy = std::unique_ptr<maze::PersistenceStrategy>(new maze::SVGSave(*maze.get(),save_path));
 		}
+
+
+        timer.milliseconds_since();
+		persistence_strategy->persist_maze();
+		std::cout << "Save time: " << timer.milliseconds_since() << " milliseconds. \n";
+        
 
 		
 	}
 	catch (std::runtime_error e)
 	{
-		std::cerr << e.what();
+		std::cerr << e.what() << "\n";
 	}
 	
 } 

@@ -4,7 +4,7 @@
 namespace maze
 {
     /* Generate a maze using kruskal */
-	std::shared_ptr<maze::Maze> maze::KruskalGenerator::make_maze()
+	std::unique_ptr<maze::Maze> maze::KruskalGenerator::make_maze()
 	{
 		/*  Algorithm: https://en.wikipedia.org/wiki/
         Maze_generation_algorithm#Randomized_Kruskal.27s_algorithm 
@@ -12,7 +12,7 @@ namespace maze
     	*/
 
     	/* Initialize maze object */
-    	std::shared_ptr<maze::Maze> maze(new Maze(height, width));
+    	std::unique_ptr<maze::Maze> maze(new Maze(height, width));
 
 
         /* List of pointers to all cells */

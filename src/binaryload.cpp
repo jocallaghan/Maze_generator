@@ -4,7 +4,7 @@
 namespace maze
 {
 	/* Generates a maze using a binary file */
-	std::shared_ptr<maze::Maze> maze::BinaryLoad::make_maze()
+	std::unique_ptr<maze::Maze> maze::BinaryLoad::make_maze()
 	{
 		std::fstream binaryFile(file_path, std::fstream::in | std::fstream::binary);
 
@@ -48,7 +48,7 @@ namespace maze
 
 
 		/* Initialize maze object */
-		std::shared_ptr<maze::Maze> maze(new Maze(height, width));
+		std::unique_ptr<maze::Maze> maze(new Maze(height, width));
 
 
  		unsigned long readEdges = 0;

@@ -10,7 +10,7 @@ namespace maze
 	class MazeFactory
 	{
 		public:
-			virtual std::shared_ptr<maze::Maze> make_maze() = 0;
+			virtual std::unique_ptr<maze::Maze> make_maze() = 0;
 			MazeFactory() {};
 			~MazeFactory() {};
 

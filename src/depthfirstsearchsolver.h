@@ -8,7 +8,7 @@
 
 namespace maze
 {
-	class DepthFirstSearchSolver : SolvingStrategy
+	class DepthFirstSearchSolver : public SolvingStrategy
 	{
         maze::Maze * maze;
 

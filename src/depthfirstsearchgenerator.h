@@ -15,6 +15,6 @@ namespace maze
 		public:
 			DepthFirstSearchGenerator(unsigned height_, unsigned width_, unsigned seed_):
 				height(height_), width(width_), seed(seed_) {};
-			virtual std::shared_ptr<maze::Maze> make_maze() override;
+			virtual std::unique_ptr<maze::Maze> make_maze() override;
 	};
 }

@@ -8,7 +8,7 @@ kruskalgenerator.o
 
 %.o: %.cpp
 	@echo "##### Compiling........"
-	g++ $(CFLAGS) -c $< -o $@
+	g++ $(CFLAGS) $(DEBUG) -c $< -o $@
 
 all: $(OBJ)
 	@echo "##### Linking........"
