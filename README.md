@@ -1,7 +1,7 @@
 Maze generator
 ==============
 
-Solution by Josh Nithsdale (s3346764@student.rmit.edu.au)
+Solution by Josh O'Callaghan (s3346764@student.rmit.edu.au)
 ---------------------------------------------------------
 
 
